@@ -864,8 +864,9 @@
   <ul class="nav-tabs">
     <li class="nav-tab active" onclick="showPage(1, this)" data-page="1"><span class="nav-num">00</span><span>Introduction</span></li>
     <li class="nav-tab" onclick="showPage('1b', this)" data-page="1b"><span class="nav-num">01</span><span>Choice of Medium</span></li>
-    <li class="nav-tab" onclick="showPage(2, this)" data-page="2"><span class="nav-num">02</span><span>Exhibition Intro</span></li>
-    <li class="nav-tab" onclick="showPage(3, this)" data-page="3"><span class="nav-num">03</span><span>Stop: Japan</span></li>
+    <li class="nav-tab" onclick="showPage('1c', this)" data-page="1c"><span class="nav-num">02</span><span>Welcome</span></li>
+    <li class="nav-tab" onclick="showPage(2, this)" data-page="2"><span class="nav-num">03</span><span>Exhibition Intro</span></li>
+    <li class="nav-tab" onclick="showPage(3, this)" data-page="3"><span class="nav-num">04</span><span>Stop: Japan</span></li>
     <!-- Add more stops here following the same pattern -->
   </ul>
 </nav>
@@ -1220,120 +1221,630 @@
 
 
 <!-- ═══════════════════════════════════════════
-     PAGE 1b: CHOICE OF MEDIUM
+     PAGE 1b: CHOICE OF MEDIUM (scroll-driven split)
 ═══════════════════════════════════════════ -->
 <div class="page" id="page-1b">
-  <div class="med-hero">
-    <div class="container">
-      <p class="eyebrow" style="color:rgba(242,194,123,0.55);margin-bottom:20px;">Ministry of Equal Distinctions</p>
-      <h1 class="med-title">Choice of Medium</h1>
-      <div class="med-rule"></div>
-      <p class="med-sub">Why a museum exhibition? Why the internet?</p>
+  <div id="cm-scroll-stage">
+
+    <!-- Sticky full-height split frame -->
+    <div id="cm-sticky-frame">
+
+      <!-- LEFT HALF: carousel + page title — always visible -->
+      <div id="cm-left-half">
+        <!-- Page header inside left panel -->
+        <div id="cm-left-header">
+          <p class="cm-eyebrow">Ministry of Equal Distinctions · 01</p>
+          <h1 class="cm-title">Choice of<br>Medium</h1>
+        </div>
+
+        <!-- Rotating images -->
+        <div id="cm-carousel2">
+          <div class="cm-slide2 active" data-idx="0">
+            <img src="US-13.jpg" alt="Anti-caste measures protest" />
+            <div class="cm-credit2">
+              <span class="cm-credit-fig2">01 / 05</span>
+              <a href="https://www.fairobserver.com/world-news/us-news/why-american-anti-caste-measures-arent-really-about-uplifting-dalits/" target="_blank" class="cm-credit-link2">Fair Observer</a>
+            </div>
+          </div>
+          <div class="cm-slide2" data-idx="1">
+            <img src="03f0c14170378e778cd3488e04950254.jpg.webp" alt="Japan protest" />
+            <div class="cm-credit2">
+              <span class="cm-credit-fig2">02 / 05</span>
+              <a href="https://www.asahi.com/ajw/articles/15338937" target="_blank" class="cm-credit-link2">The Asahi Shimbun</a>
+            </div>
+          </div>
+          <div class="cm-slide2" data-idx="2">
+            <img src="Roma-Refugees-from-Ukraine-Protest-Bucharest-With-Romani-Flag.jpg.webp" alt="Roma protest Bucharest" />
+            <div class="cm-credit2">
+              <span class="cm-credit-fig2">03 / 05</span>
+              <a href="https://www.britannica.com/topic/Rom" target="_blank" class="cm-credit-link2">Britannica</a>
+            </div>
+          </div>
+          <div class="cm-slide2" data-idx="3">
+            <img src="Black-Lives-Matter-protest-signs-Boston-Massachusetts-May-2020.jpg.webp" alt="Black Lives Matter Boston 2020" />
+            <div class="cm-credit2">
+              <span class="cm-credit-fig2">04 / 05</span>
+              <a href="https://www.britannica.com/topic/Black-Lives-Matter" target="_blank" class="cm-credit-link2">Britannica</a>
+            </div>
+          </div>
+          <div class="cm-slide2" data-idx="4">
+            <img src="042_Voicesstand_hp.jpg" alt="Anti-racism activists OHCHR" />
+            <div class="cm-credit2">
+              <span class="cm-credit-fig2">05 / 05</span>
+              <a href="https://www.ohchr.org/en/stories/2021/07/anti-racism-activists-should-be-supported-and-protected-racial-justice-report" target="_blank" class="cm-credit-link2">OHCHR</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Progress ticks -->
+        <div id="cm-ticks">
+          <div class="cm-tick active"></div>
+          <div class="cm-tick"></div>
+          <div class="cm-tick"></div>
+          <div class="cm-tick"></div>
+          <div class="cm-tick"></div>
+          <div class="cm-tick"></div>
+          <div class="cm-tick"></div>
+          <div class="cm-tick"></div>
+          <div class="cm-tick"></div>
+          <div class="cm-tick cm-tick-bib"></div>
+        </div>
+      </div>
+
+      <!-- RIGHT HALF: scroll hint + paragraphs swap in -->
+      <div id="cm-right-half">
+        <!-- Amber fill rises from bottom as you scroll -->
+        <div id="cm-right-fill"></div>
+
+        <div id="cm-right-content">
+
+          <!-- Section 0: title / scroll nudge -->
+          <div class="cm-sec active" id="cms-0">
+            <div class="cm-scroll-nudge">
+              <p class="cm-nudge-text">Scroll to read</p>
+              <span class="cm-nudge-arrow">↓</span>
+            </div>
+          </div>
+
+          <!-- Sections 1–9: paragraphs -->
+          <div class="cm-sec" id="cms-1">
+            <p class="cm-sec-label">The Medium</p>
+            <p class="cm-sec-p cm-sec-first"><span class="cm-sec-dropcap">T</span>he choice to present this work as a museum exhibition — and to stage that exhibition on a webpage — is not incidental. It is the argument. Museums are among the most powerful instruments through which institutions have historically organised, legitimised, and displayed human difference. Their architecture of authority — the glass case, the wall label, the accession number, the curatorial voice — transforms objects into evidence and prejudice into fact. To work within that form, rather than simply criticising it from outside, is to ask the viewer to feel its pull before recognising its mechanism.</p>
+          </div>
+
+          <div class="cm-sec" id="cms-2">
+            <p class="cm-sec-label">Context</p>
+            <p class="cm-sec-p">While this project is shaped by and deeply values the many efforts to challenge hierarchy through advocacy, protest, and collective action, it begins from a different, though related, point of departure. Across the world, ordinary people are refusing silence, asserting their own voices, and animating movements of profound political significance. My intervention is situated within this broader context, but it turns to an epistemological question: if domination is sustained not only by violence and exclusion, but also by structuring the conditions of knowledge, then we must ask how knowledge itself is organised, authorised, and weaponised in the present.</p>
+          </div>
+
+          <div class="cm-sec" id="cms-3">
+            <p class="cm-sec-p">This question feels especially urgent in a moment of intense political pressure, where education is increasingly contested and instrumentalised. The issue is not only what we know, but how we come to know at all. If hierarchy survives by making itself appear natural, then one task of critique is to unsettle the very conditions under which that appearance becomes believable.</p>
+          </div>
+
+          <div class="cm-sec" id="cms-4">
+            <p class="cm-sec-label">The Project</p>
+            <p class="cm-sec-p">It is for this reason that the project takes the form of a fictional museum exhibition. Set in the year 2078, in Harmony City, in the country known as the United States of Perfect Balance, the exhibition is organised by the Ministry of Equal Distinctions in collaboration with the Institute for Keeping Things in Order. Even before the visitor enters, the language of the institution signals the central irony of the project: this is a world in which inequality has not disappeared, but has instead been absorbed into the rhetoric of harmony, balance, and administrative reason.</p>
+          </div>
+
+          <div class="cm-sec" id="cms-5">
+            <p class="cm-sec-p">The exhibition opens with the discovery of a fictional travel text, <em>The Stranger's Atlas: An Annotated Survey of Peoples, Customs, and Social Boundaries</em>, written by the fictional traveller Alistair Finch Hatton during his journeys across the late nineteenth- and early twentieth-century world. From there, visitors move through five galleries: devoted to Japan and East Asia, Europe, Africa, and the Americas and Caribbean. Across these spaces, the exhibition draws on historical literature to present observations about peoples, customs, and social boundaries as they might appear through the eyes of an outsider.</p>
+          </div>
+
+          <div class="cm-sec" id="cms-6">
+            <p class="cm-sec-p">This narrative choice is deliberate. Because the exhibition is mediated through Finch Hatton's perspective, systems of caste, racialisation, social exclusion, and hierarchy are described as though they are simply there to be observed — narrated in the tone of detached record, as if they were natural features of social life rather than the contingent and violent products of history. The project seeks to expose how structures of domination so often become intelligible only through the perspective of those who classify, govern, and record, while the voices of those who live under these arrangements are marginalised or erased.</p>
+          </div>
+
+          <div class="cm-sec" id="cms-7">
+            <p class="cm-sec-label">The Museum as Form</p>
+            <p class="cm-sec-p">The museum is especially useful because it stands at the intersection of knowledge production, preservation, and authority. Through categorisation, curation, arrangement, and display, museums actively construct what counts as history, what counts as evidence, and what counts as legitimate understanding. From a Foucauldian perspective, museum curation does not merely present established knowledge; it helps produce and stabilise relations of power. As Greenhill (1992) and Bennett (2009) have shown, museums are not only pedagogical spaces, but institutions deeply involved in the regulation of conduct, the formation of public culture, and the organisation of modern social order.</p>
+          </div>
+
+          <div class="cm-sec" id="cms-8">
+            <p class="cm-sec-p">That is why the exhibition is written in a tone reminiscent of Orwellian dystopia — exaggerated, bureaucratic, and unsettlingly calm. In the tradition of speculative fiction, what Suvin (2016) describes through the logic of cognitive estrangement, the exhibition constructs an alternative reality that remains legibly connected to our own. By encountering a world that feels both unfamiliar and disturbingly plausible, the audience is invited to recognise the structures that ordinary language so often conceals. Ultimately, <em>The Exhibition as an Epistemological Critique</em> asks not only what race is, but who gets to define these classifications in the first place — and whose worlds, histories, and humanity are rendered intelligible in the process.</p>
+          </div>
+
+          <div class="cm-sec" id="cms-9">
+            <p class="cm-sec-label">Bibliography</p>
+            <div class="cm-sec-bib">
+              <p>Bennett, Tony. 2009. <em>The Birth of the Museum: History, Theory, Politics.</em> London: Routledge.</p>
+              <p>Greenhill, Eilean Hooper. 1992. <em>Museums and the Shaping of Knowledge.</em> London; New York: Routledge.</p>
+              <p>Suvin, Darko. 2016. <em>Metamorphoses of Science Fiction.</em> Edited by G. Canavan. Oxford: Peter Lang AG.</p>
+            </div>
+            <button class="exit-btn" style="margin-top:36px;" onclick="showPage('1c', null)">
+              Continue to Welcome
+              <span class="exit-arrow">→</span>
+            </button>
+          </div>
+
+        </div>
+      </div>
     </div>
+
+    <!-- Scroll spacer -->
+    <div id="cm-spacer"></div>
   </div>
+</div>
 
-  <div class="container">
-    <div class="med-body">
-      <p class="med-p med-first">
-        <span class="med-dropcap">T</span>he choice to present this work as a museum exhibition — and to stage that exhibition on a webpage — is not incidental. It is the argument. Museums are among the most powerful instruments through which institutions have historically organised, legitimised, and displayed human difference. Their architecture of authority — the glass case, the wall label, the accession number, the curatorial voice — transforms objects into evidence and prejudice into fact. To work within that form, rather than simply criticising it from outside, is to ask the viewer to feel its pull before recognising its mechanism.
-      </p>
-      <p class="med-p">
-        The web extends this logic into the present. A webpage is not a neutral container; it is itself a designed surface that organises attention, structures navigation, and produces the experience of legitimacy through form. The visual conventions of institutional websites — clean typography, measured spacing, the language of collections and catalogues — carry authority whether or not their content merits it. By adopting these conventions deliberately, this project asks what it means to trust a surface, and what we risk when we do.
-      </p>
-      <p class="med-p">
-        There is also something specific about the act of scrolling. Unlike the static page or the gallery wall, the scroll demands a kind of physical complicity from the reader: you must move through it yourself. You cannot stand at a distance. The text arrives at your pace, shaped by your hand. This project uses that dynamic intentionally — the reader is not a passive recipient of the exhibition but an active participant in its unfolding, implicated in the very act of reading.
-      </p>
-      <p class="med-p">
-        Finally, to place a fictional museum on the internet in 2025 is to locate it within a contemporary epistemological crisis. We live in a moment when the question of what counts as knowledge, whose account is credible, and which institutions can be trusted is urgently and publicly contested. The Ministry of Equal Distinctions does not resolve that crisis. It stages it.
-      </p>
+<style>
+/* ── PAGE 1b v2: scroll-driven split ── */
+#cm-scroll-stage { position: relative; }
+#cm-spacer { height: 1000vh; } /* set by JS */
 
-      <div class="med-continue">
-        <div class="med-diamond"></div>
-        <button class="exit-btn" onclick="showPage(2, null)">
-          Enter the Exhibition
-          <span class="exit-arrow">→</span>
-        </button>
+#cm-sticky-frame {
+  position: sticky;
+  top: var(--nav-h);
+  height: calc(100vh - var(--nav-h));
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+}
+
+/* LEFT HALF */
+#cm-left-half {
+  position: relative;
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  padding: 48px 52px 36px 0;
+  margin-left: calc((100vw - min(1240px, calc(100% - 48px))) / 2);
+  padding-left: 0;
+}
+/* Align left edge to container */
+@media (min-width: 1288px) {
+  #cm-left-half { padding-left: 0; margin-left: calc((100vw - 1240px) / 2); }
+}
+
+#cm-left-header { margin-bottom: 28px; flex-shrink: 0; }
+.cm-eyebrow {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: rgba(242,194,123,0.5);
+  margin: 0 0 14px;
+}
+.cm-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.8rem, 4.5vw, 5rem);
+  font-weight: 300;
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  margin: 0;
+}
+
+/* Carousel inside left half */
+#cm-carousel2 {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: #0c0a09;
+  margin-bottom: 20px;
+}
+.cm-slide2 {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.7s ease;
+}
+.cm-slide2.active { opacity: 1; }
+.cm-slide2 img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.78) saturate(0.88);
+}
+.cm-credit2 {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 14px 18px;
+  background: linear-gradient(to top, rgba(0,0,0,0.72) 0%, transparent 100%);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.cm-credit-fig2 {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.38);
+}
+.cm-credit-link2 {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.18);
+  padding-bottom: 1px;
+  transition: color 0.2s;
+}
+.cm-credit-link2:hover { color: var(--accent); }
+
+/* Progress ticks — row of thin lines at bottom of left panel */
+#cm-ticks {
+  display: flex;
+  gap: 4px;
+  flex-shrink: 0;
+}
+.cm-tick {
+  flex: 1;
+  height: 2px;
+  background: var(--border);
+  border-radius: 2px;
+  transition: background 0.4s, height 0.2s;
+}
+.cm-tick.done { background: rgba(242,194,123,0.3); }
+.cm-tick.active { background: var(--accent); height: 3px; }
+.cm-tick-bib { flex: 0.5; }
+
+/* RIGHT HALF */
+#cm-right-half {
+  position: relative;
+  overflow: hidden;
+}
+#cm-right-fill {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 0%;
+  background: rgba(242,194,123,0.055);
+  border-top: 1px solid rgba(242,194,123,0.1);
+  transition: height 0.08s linear;
+  pointer-events: none;
+  z-index: 0;
+}
+#cm-right-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  padding: 0 0 0 64px;
+  padding-right: calc((100vw - min(1240px, calc(100% + 48px))) / 2 + 24px);
+}
+@media (min-width: 1288px) {
+  #cm-right-content { padding-right: calc((100vw - 1240px) / 2); }
+}
+
+/* Paragraph sections */
+.cm-sec {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 48px 48px 48px 64px;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+.cm-sec.active { opacity: 1; pointer-events: auto; }
+
+/* Scroll nudge */
+.cm-scroll-nudge {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.cm-nudge-text {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: rgba(242,194,123,0.38);
+  margin: 0;
+}
+.cm-nudge-arrow {
+  font-size: 14px;
+  color: rgba(242,194,123,0.38);
+  animation: cmBounce 1.8s ease-in-out infinite;
+}
+@keyframes cmBounce {
+  0%,100% { transform: translateY(0); }
+  50%      { transform: translateY(5px); }
+}
+
+/* Paragraph styling */
+.cm-sec-label {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: rgba(242,194,123,0.5);
+  margin: 0 0 20px;
+}
+.cm-sec-p {
+  font-family: 'Libre Baskerville', serif;
+  font-size: clamp(15px, 1.5vw, 17px);
+  line-height: 1.95;
+  color: var(--muted);
+  margin: 0;
+}
+.cm-sec-first { font-size: clamp(16px, 1.6vw, 18px); }
+.cm-sec-dropcap {
+  float: left;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 4.8rem;
+  font-weight: 300;
+  line-height: 0.72;
+  padding-right: 11px;
+  padding-top: 9px;
+  color: var(--accent);
+}
+.cm-sec-bib p {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 13px;
+  line-height: 1.75;
+  color: var(--subtle);
+  margin: 0 0 8px;
+}
+.cm-sec-bib p:last-child { margin-bottom: 0; }
+
+@media (max-width: 860px) {
+  #cm-sticky-frame { grid-template-columns: 1fr; }
+  #cm-left-half { display: none; }
+  #cm-right-content { padding-left: 24px; padding-right: 24px; }
+}
+</style>
+
+<script>
+(function() {
+  const TOTAL_SECS = 10; /* 0 (nudge) + 9 paragraphs */
+  const IMG_COUNT  = 5;
+
+  const stage   = document.getElementById('cm-scroll-stage');
+  const spacer  = document.getElementById('cm-spacer');
+  const fill    = document.getElementById('cm-right-fill');
+  const secs    = Array.from({length: TOTAL_SECS}, (_, i) => document.getElementById('cms-' + i));
+  const slides  = document.querySelectorAll('#page-1b .cm-slide2');
+  const ticks   = document.querySelectorAll('#cm-ticks .cm-tick');
+
+  const VH = window.innerHeight - 64;
+  spacer.style.height = (TOTAL_SECS * VH) + 'px';
+
+  let activeSec = -1;
+
+  function update() {
+    if (!document.getElementById('page-1b').classList.contains('active')) return;
+    const stageTop = stage.getBoundingClientRect().top;
+    const scrolled = -stageTop;
+    if (scrolled < 0) return;
+
+    const secIdx = Math.max(0, Math.min(TOTAL_SECS - 1, Math.floor(scrolled / VH)));
+    const prog   = Math.max(0, Math.min(1, scrolled / ((TOTAL_SECS - 1) * VH)));
+
+    // Right fill rises
+    fill.style.height = Math.round(prog * 100) + '%';
+
+    // Swap section
+    if (secIdx !== activeSec) {
+      secs.forEach((s, i) => s && s.classList.toggle('active', i === secIdx));
+      activeSec = secIdx;
+
+      // Image: map 9 paragraphs (secs 1-9) to 5 images evenly
+      const imgIdx = Math.min(IMG_COUNT - 1, Math.floor((secIdx / (TOTAL_SECS - 1)) * IMG_COUNT));
+      slides.forEach((sl, i) => sl.classList.toggle('active', i === imgIdx));
+
+      // Ticks
+      ticks.forEach((t, i) => {
+        t.classList.remove('active', 'done');
+        if (i < secIdx) t.classList.add('done');
+        if (i === secIdx) t.classList.add('active');
+      });
+    }
+  }
+
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', () => {
+    const newVH = window.innerHeight - 64;
+    spacer.style.height = (TOTAL_SECS * newVH) + 'px';
+    update();
+  });
+  update();
+})();
+</script>
+
+<!-- ═══════════════════════════════════════════
+     PAGE 1c: WELCOME SPLASH
+═══════════════════════════════════════════ -->
+<div class="page" id="page-1c">
+  <div class="wc-stage">
+
+    <!-- Ambient background lines -->
+    <div class="wc-bg" aria-hidden="true">
+      <div class="wc-line"></div><div class="wc-line"></div>
+      <div class="wc-line"></div><div class="wc-line"></div>
+      <div class="wc-line"></div>
+    </div>
+
+    <div class="container wc-inner">
+      <div class="wc-content">
+
+        <div class="wc-stamp">
+          <span class="wc-stamp-text">Ministry of Equal Distinctions</span>
+          <span class="wc-stamp-sub">Est. 2078 · Harmony City</span>
+        </div>
+
+        <div class="wc-rule-top"></div>
+
+        <h2 class="wc-title">The Exhibition as an<br>Epistemological Critique</h2>
+
+        <p class="wc-welcome">
+          Welcome, then, to <em>The Exhibition as an Epistemological Critique:</em> a museum of order, hierarchy, and human difference, where the categories that once claimed merely to describe the world are revealed as instruments that helped to make it. What awaits is not a neutral archive of the past, but an encounter with the epistemic structures through which domination has been rendered sensible, legitimate, and enduring. If this project has a horizon, it is not simply exposure, but interruption: the unsettling of those conditions of knowledge that continue to determine whose histories are preserved, whose voices are authorised, and whose humanity is made intelligible.
+        </p>
+
+        <div class="wc-rule-bottom"></div>
+
+        <div class="wc-action">
+          <button class="wc-enter-btn" onclick="showPage(2, null)">
+            <span class="wc-enter-label">Enter the Exhibition</span>
+            <span class="wc-enter-arrow">→</span>
+          </button>
+          <p class="wc-disclaimer">All materials are fictional. Images are AI-generated.</p>
+        </div>
+
       </div>
     </div>
   </div>
 </div>
 
 <style>
-.med-hero {
-  padding: 80px 0 56px;
-  border-bottom: 1px solid var(--border);
+/* ── PAGE 1c: WELCOME ── */
+.wc-stage {
+  min-height: calc(100vh - var(--nav-h));
+  display: flex;
+  align-items: center;
   position: relative;
+  overflow: hidden;
 }
-.med-hero::before {
-  content: '';
+
+/* Ambient vertical lines */
+.wc-bg {
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at 20% 60%, rgba(242,194,123,0.06) 0%, transparent 55%);
+  display: flex;
+  justify-content: space-evenly;
   pointer-events: none;
 }
-.med-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(3rem, 7vw, 6.5rem);
-  font-weight: 300;
-  line-height: 0.94;
-  letter-spacing: -0.01em;
-  color: var(--text);
-  margin: 0 0 24px;
+.wc-line {
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent 0%, rgba(242,194,123,0.06) 30%, rgba(242,194,123,0.06) 70%, transparent 100%);
 }
-.med-rule {
-  width: 60px;
+
+.wc-inner {
+  position: relative;
+  z-index: 1;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.wc-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Stamp */
+.wc-stamp {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  border: 1px solid rgba(242,194,123,0.2);
+  padding: 10px 28px;
+  border-radius: 4px;
+  margin-bottom: 40px;
+}
+.wc-stamp-text {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  color: rgba(242,194,123,0.55);
+}
+.wc-stamp-sub {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(242,194,123,0.3);
+}
+
+/* Rules */
+.wc-rule-top, .wc-rule-bottom {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 36px 0;
+}
+.wc-rule-top::before, .wc-rule-top::after,
+.wc-rule-bottom::before, .wc-rule-bottom::after {
+  content: '';
+  flex: 1;
   height: 1px;
-  background: rgba(242,194,123,0.5);
-  margin-bottom: 24px;
+  background: var(--border);
 }
-.med-sub {
+.wc-rule-top::before { background: linear-gradient(to right, transparent, var(--border)); }
+.wc-rule-top::after  { background: linear-gradient(to left,  transparent, var(--border)); }
+.wc-rule-bottom::before { background: linear-gradient(to right, transparent, var(--border)); }
+.wc-rule-bottom::after  { background: linear-gradient(to left,  transparent, var(--border)); }
+.wc-rule-top::after, .wc-rule-bottom::after { content: ''; }
+
+/* Use a diamond in the middle of each rule */
+.wc-rule-top { position: relative; }
+.wc-rule-top::before { content: ''; position: static; }
+
+/* Simpler: just place a small diamond inline */
+.wc-title {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.35rem;
-  font-style: italic;
+  font-size: clamp(2.2rem, 5vw, 4rem);
   font-weight: 300;
-  color: var(--subtle);
+  line-height: 1.12;
+  letter-spacing: 0.01em;
+  color: var(--text);
   margin: 0;
 }
-.med-body {
-  max-width: 700px;
-  padding: 64px 0 96px;
-}
-.med-p {
+
+.wc-welcome {
   font-family: 'Libre Baskerville', serif;
-  font-size: 18px;
+  font-size: clamp(16px, 1.6vw, 19px);
   line-height: 2;
   color: var(--muted);
-  margin: 0 0 32px;
+  margin: 0;
+  text-align: left;
 }
-.med-first { font-size: 19px; }
-.med-dropcap {
-  float: left;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 5.2rem;
-  font-weight: 300;
-  line-height: 0.72;
-  padding-right: 12px;
-  padding-top: 10px;
-  color: var(--accent);
-}
-.med-continue {
+
+/* Action */
+.wc-action {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 24px;
-  margin-top: 24px;
-  padding-top: 48px;
-  border-top: 1px solid var(--border);
+  align-items: center;
+  gap: 20px;
 }
-.med-diamond {
-  width: 8px; height: 8px;
-  background: var(--accent); opacity: 0.35;
-  transform: rotate(45deg);
+
+.wc-enter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  background: rgba(242,194,123,0.06);
+  border: 1px solid rgba(242,194,123,0.3);
+  border-radius: 4px;
+  padding: 18px 48px;
+  color: var(--accent);
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.25s, border-color 0.25s;
+}
+.wc-enter-btn:hover {
+  background: rgba(242,194,123,0.12);
+  border-color: rgba(242,194,123,0.6);
+}
+.wc-enter-arrow {
+  font-size: 15px;
+  transition: transform 0.2s;
+}
+.wc-enter-btn:hover .wc-enter-arrow { transform: translateX(5px); }
+
+.wc-disclaimer {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.18);
+  margin: 0;
 }
 </style>
 
 <!-- ═══════════════════════════════════════════
-     PAGE 2: EXHIBITION INTRODUCTION
+     PAGE 2 (formerly PAGE 2): EXHIBITION INTRODUCTION
 ═══════════════════════════════════════════ -->
 <div class="page" id="page-2">
 
