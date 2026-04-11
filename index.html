@@ -857,6 +857,12 @@
   </style>
 </head>
 <body>
+<div class="site-progress" id="siteProgress"></div>
+<div class="page-actions">
+  <button class="action-btn" id="prevPageBtn" type="button" aria-label="Previous page">←</button>
+  <button class="action-btn" id="nextPageBtn" type="button" aria-label="Next page">→</button>
+  <button class="action-btn" id="topBtn" type="button" aria-label="Back to top">↑</button>
+</div>
 
 <!-- NAV -->
 <nav>
@@ -866,8 +872,11 @@
     <li class="nav-tab" onclick="showPage('1b', this)" data-page="1b"><span class="nav-num">01</span><span>Choice of Medium</span></li>
     <li class="nav-tab" onclick="showPage('1c', this)" data-page="1c"><span class="nav-num">02</span><span>Welcome</span></li>
     <li class="nav-tab" onclick="showPage(2, this)" data-page="2"><span class="nav-num">03</span><span>Exhibition Intro</span></li>
-    <li class="nav-tab" onclick="showPage(3, this)" data-page="3"><span class="nav-num">04</span><span>Stop: Japan</span></li>
-    <!-- Add more stops here following the same pattern -->
+    <li class="nav-tab" onclick="showPage(3, this)" data-page="3"><span class="nav-num">04</span><span>Japan &amp; East Asia</span></li>
+    <li class="nav-tab" onclick="showPage(4, this)" data-page="4"><span class="nav-num">05</span><span>Europe</span></li>
+    <li class="nav-tab" onclick="showPage(5, this)" data-page="5"><span class="nav-num">06</span><span>Africa</span></li>
+    <li class="nav-tab" onclick="showPage(6, this)" data-page="6"><span class="nav-num">07</span><span>Americas</span></li>
+    <li class="nav-tab" onclick="showPage(7, this)" data-page="7"><span class="nav-num">08</span><span>Caribbean</span></li>
   </ul>
 </nav>
 
@@ -1286,7 +1295,6 @@
           <div class="cm-tick"></div>
           <div class="cm-tick"></div>
           <div class="cm-tick"></div>
-          <div class="cm-tick"></div>
           <div class="cm-tick cm-tick-bib"></div>
         </div>
       </div>
@@ -1306,44 +1314,39 @@
             </div>
           </div>
 
-          <!-- Sections 1–9: paragraphs -->
+          <!-- Sections 1–8: paragraphs -->
           <div class="cm-sec" id="cms-1">
-            <p class="cm-sec-label">The Medium</p>
-            <p class="cm-sec-p cm-sec-first"><span class="cm-sec-dropcap">T</span>he choice to present this work as a museum exhibition — and to stage that exhibition on a webpage — is not incidental. It is the argument. Museums are among the most powerful instruments through which institutions have historically organised, legitimised, and displayed human difference. Their architecture of authority — the glass case, the wall label, the accession number, the curatorial voice — transforms objects into evidence and prejudice into fact. To work within that form, rather than simply criticising it from outside, is to ask the viewer to feel its pull before recognising its mechanism.</p>
+            <p class="cm-sec-label">Context</p>
+            <p class="cm-sec-p cm-sec-first"><span class="cm-sec-dropcap">W</span>hile this project is shaped by and deeply values the many efforts to challenge hierarchy through advocacy, protest, and collective action, it begins from a different, though related, point of departure. Across the world, ordinary people are refusing silence, asserting their own voices, and animating movements of profound political significance. My intervention is situated within this broader context, but it turns to an epistemological question: if domination is sustained not only by violence and exclusion, but also by structuring the conditions of knowledge, then we must ask how knowledge itself is organised, authorised, and weaponised in the present.</p>
           </div>
 
           <div class="cm-sec" id="cms-2">
-            <p class="cm-sec-label">Context</p>
-            <p class="cm-sec-p">While this project is shaped by and deeply values the many efforts to challenge hierarchy through advocacy, protest, and collective action, it begins from a different, though related, point of departure. Across the world, ordinary people are refusing silence, asserting their own voices, and animating movements of profound political significance. My intervention is situated within this broader context, but it turns to an epistemological question: if domination is sustained not only by violence and exclusion, but also by structuring the conditions of knowledge, then we must ask how knowledge itself is organised, authorised, and weaponised in the present.</p>
-          </div>
-
-          <div class="cm-sec" id="cms-3">
             <p class="cm-sec-p">This question feels especially urgent in a moment of intense political pressure, where education is increasingly contested and instrumentalised. The issue is not only what we know, but how we come to know at all. If hierarchy survives by making itself appear natural, then one task of critique is to unsettle the very conditions under which that appearance becomes believable.</p>
           </div>
 
-          <div class="cm-sec" id="cms-4">
+          <div class="cm-sec" id="cms-3">
             <p class="cm-sec-label">The Project</p>
             <p class="cm-sec-p">It is for this reason that the project takes the form of a fictional museum exhibition. Set in the year 2078, in Harmony City, in the country known as the United States of Perfect Balance, the exhibition is organised by the Ministry of Equal Distinctions in collaboration with the Institute for Keeping Things in Order. Even before the visitor enters, the language of the institution signals the central irony of the project: this is a world in which inequality has not disappeared, but has instead been absorbed into the rhetoric of harmony, balance, and administrative reason.</p>
           </div>
 
-          <div class="cm-sec" id="cms-5">
+          <div class="cm-sec" id="cms-4">
             <p class="cm-sec-p">The exhibition opens with the discovery of a fictional travel text, <em>The Stranger's Atlas: An Annotated Survey of Peoples, Customs, and Social Boundaries</em>, written by the fictional traveller Alistair Finch Hatton during his journeys across the late nineteenth- and early twentieth-century world. From there, visitors move through five galleries: devoted to Japan and East Asia, Europe, Africa, and the Americas and Caribbean. Across these spaces, the exhibition draws on historical literature to present observations about peoples, customs, and social boundaries as they might appear through the eyes of an outsider.</p>
           </div>
 
-          <div class="cm-sec" id="cms-6">
+          <div class="cm-sec" id="cms-5">
             <p class="cm-sec-p">This narrative choice is deliberate. Because the exhibition is mediated through Finch Hatton's perspective, systems of caste, racialisation, social exclusion, and hierarchy are described as though they are simply there to be observed — narrated in the tone of detached record, as if they were natural features of social life rather than the contingent and violent products of history. The project seeks to expose how structures of domination so often become intelligible only through the perspective of those who classify, govern, and record, while the voices of those who live under these arrangements are marginalised or erased.</p>
           </div>
 
-          <div class="cm-sec" id="cms-7">
+          <div class="cm-sec" id="cms-6">
             <p class="cm-sec-label">The Museum as Form</p>
             <p class="cm-sec-p">The museum is especially useful because it stands at the intersection of knowledge production, preservation, and authority. Through categorisation, curation, arrangement, and display, museums actively construct what counts as history, what counts as evidence, and what counts as legitimate understanding. From a Foucauldian perspective, museum curation does not merely present established knowledge; it helps produce and stabilise relations of power. As Greenhill (1992) and Bennett (2009) have shown, museums are not only pedagogical spaces, but institutions deeply involved in the regulation of conduct, the formation of public culture, and the organisation of modern social order.</p>
           </div>
 
-          <div class="cm-sec" id="cms-8">
+          <div class="cm-sec" id="cms-7">
             <p class="cm-sec-p">That is why the exhibition is written in a tone reminiscent of Orwellian dystopia — exaggerated, bureaucratic, and unsettlingly calm. In the tradition of speculative fiction, what Suvin (2016) describes through the logic of cognitive estrangement, the exhibition constructs an alternative reality that remains legibly connected to our own. By encountering a world that feels both unfamiliar and disturbingly plausible, the audience is invited to recognise the structures that ordinary language so often conceals. Ultimately, <em>The Exhibition as an Epistemological Critique</em> asks not only what race is, but who gets to define these classifications in the first place — and whose worlds, histories, and humanity are rendered intelligible in the process.</p>
           </div>
 
-          <div class="cm-sec" id="cms-9">
+          <div class="cm-sec" id="cms-8">
             <p class="cm-sec-label">Bibliography</p>
             <div class="cm-sec-bib">
               <p>Bennett, Tony. 2009. <em>The Birth of the Museum: History, Theory, Politics.</em> London: Routledge.</p>
@@ -1517,10 +1520,11 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 48px 48px 48px 64px;
+  padding: 32px 40px 32px 64px;
   opacity: 0;
   transition: opacity 0.5s ease;
   pointer-events: none;
+  overflow-y: auto;
 }
 .cm-sec.active { opacity: 1; pointer-events: auto; }
 
@@ -1559,20 +1563,20 @@
 }
 .cm-sec-p {
   font-family: 'Libre Baskerville', serif;
-  font-size: clamp(15px, 1.5vw, 17px);
-  line-height: 1.95;
+  font-size: clamp(13px, 1.3vw, 16px);
+  line-height: 1.9;
   color: var(--muted);
   margin: 0;
 }
-.cm-sec-first { font-size: clamp(16px, 1.6vw, 18px); }
+.cm-sec-first { font-size: clamp(14px, 1.4vw, 17px); }
 .cm-sec-dropcap {
   float: left;
   font-family: 'Cormorant Garamond', serif;
-  font-size: 4.8rem;
+  font-size: clamp(3.5rem, 4vw, 4.8rem);
   font-weight: 300;
   line-height: 0.72;
-  padding-right: 11px;
-  padding-top: 9px;
+  padding-right: 10px;
+  padding-top: 8px;
   color: var(--accent);
 }
 .cm-sec-bib p {
@@ -1593,7 +1597,7 @@
 
 <script>
 (function() {
-  const TOTAL_SECS = 10; /* 0 (nudge) + 9 paragraphs */
+  const TOTAL_SECS = 9; /* 0 (nudge) + 8 paragraphs */
   const IMG_COUNT  = 5;
 
   const stage   = document.getElementById('cm-scroll-stage');
@@ -1787,13 +1791,13 @@
   line-height: 1.12;
   letter-spacing: 0.01em;
   color: var(--text);
-  margin: 0;
+  margin: 0 0 48px;
 }
 
 .wc-welcome {
   font-family: 'Libre Baskerville', serif;
   font-size: clamp(16px, 1.6vw, 19px);
-  line-height: 2;
+  line-height: 2.1;
   color: var(--muted);
   margin: 0;
   text-align: left;
@@ -1844,23 +1848,21 @@
 </style>
 
 <!-- ═══════════════════════════════════════════
-     PAGE 2 (formerly PAGE 2): EXHIBITION INTRODUCTION
+     PAGE 3: EXHIBITION INTRO
 ═══════════════════════════════════════════ -->
 <div class="page" id="page-2">
 
-  <!-- ── NOTICE BANNER ── -->
+  <!-- NOTICE -->
   <div class="ex-notice">
     <div class="container">
       <div class="ex-notice-inner">
         <span class="ex-notice-icon">⚠</span>
-        <p class="ex-notice-text">
-          <strong>Fictional exhibit notice.</strong> The images in this exhibition are AI-generated and the texts, donor history, object labels, and archival framing are invented. This project twists the language and display strategies of historical literature tied to racial discrimination, segregation, and hierarchy in order to critique how institutions make prejudice look orderly, factual, and respectable.
-        </p>
+        <p class="ex-notice-text"><strong>Fictional exhibit notice.</strong> The images in this exhibition are AI-generated and the texts, donor history, object labels, and archival framing are invented. This project twists the language of historical institutions tied to racial discrimination and hierarchy in order to critique how prejudice is made to appear orderly and respectable.</p>
       </div>
     </div>
   </div>
 
-  <!-- ── FULL-BLEED HERO IMAGE ── -->
+  <!-- HERO IMAGE -->
   <div class="ex-hero-img">
     <img src="Gemini_Generated_Image_6lgmdy6lgmdy6lgm.png" alt="View of Harmony City" />
     <div class="ex-hero-overlay">
@@ -1872,87 +1874,71 @@
         </div>
       </div>
     </div>
-    <div class="ex-hero-fig">
-      <span>Fig. 01 — View of Harmony City, 2078 (fictional)</span>
-    </div>
+    <div class="ex-hero-fig"><span>View of Harmony City, 2078 (fictional)</span></div>
   </div>
 
-  <!-- ── META STRIP ── -->
+  <!-- META STRIP -->
   <div class="ex-meta-strip">
     <div class="container">
       <div class="ex-meta-row">
-        <div class="ex-meta-item">
-          <p class="ex-meta-key">Exhibition Dates</p>
-          <p class="ex-meta-val">January 2078 — June 2078</p>
-        </div>
+        <div class="ex-meta-item"><p class="ex-meta-key">Exhibition Dates</p><p class="ex-meta-val">January 2078 — June 2078</p></div>
         <div class="ex-meta-divider"></div>
-        <div class="ex-meta-item">
-          <p class="ex-meta-key">Location</p>
-          <p class="ex-meta-val">Harmony City, the United States of Perfect Balance</p>
-        </div>
+        <div class="ex-meta-item"><p class="ex-meta-key">Location</p><p class="ex-meta-val">Harmony City, the United States of Perfect Balance</p></div>
         <div class="ex-meta-divider"></div>
-        <div class="ex-meta-item">
-          <p class="ex-meta-key">Featured Volume</p>
-          <p class="ex-meta-val"><em>The Stranger's Atlas</em> — Alistair Finch Hatton</p>
-        </div>
+        <div class="ex-meta-item"><p class="ex-meta-key">Featured Volume</p><p class="ex-meta-val"><em>The Stranger's Atlas</em> — Alistair Finch Hatton</p></div>
         <div class="ex-meta-divider"></div>
-        <div class="ex-meta-item">
-          <p class="ex-meta-key">Gallery</p>
-          <p class="ex-meta-val">01 of 06</p>
-        </div>
+        <div class="ex-meta-item"><p class="ex-meta-key">Gallery</p><p class="ex-meta-val">01 of 06</p></div>
       </div>
     </div>
   </div>
 
-  <!-- ── MAIN CONTENT: WALL TEXT + IMAGE ── -->
+  <!-- BODY: 50/50 wall text + image -->
   <div class="container">
     <div class="ex-body">
 
-      <!-- Wall text (paper) -->
+      <!-- Left: wall text -->
       <article class="ex-paper">
         <div class="ex-paper-header">
           <div>
-            <p class="ex-wl">Wall Text · Gallery 01</p>
             <h2 class="ex-paper-title">On the occasion of this exhibition</h2>
           </div>
-          <span class="ex-paper-tag">Museum Exhibition Webpage</span>
         </div>
         <div class="ex-paper-body">
-          <p>The Ministry of Equal Distinctions is honored to present this special exhibition in collaboration with the Institute for Keeping Things in Order. At its center is a recently donated volume, <em>The Stranger's Atlas: An Annotated Survey of Peoples, Customs, and Social Boundaries</em>, preserved in exemplary condition and recognised as a model of early classificatory insight.</p>
-          <p>Compiled by the esteemed traveler Alistair Finch Hatton, the collection brings together field observations, illustrative postcards, and supporting materials gathered across his journeys. Each item reflects a careful attention to difference, a disciplined effort to observe, record, and arrange.</p>
-          <p>Such efforts laid the groundwork for what we now understand more clearly.</p>
-          <p>It is often said that equality requires sameness. This is a misunderstanding. True equality is achieved not when distinctions disappear, but when they are properly identified, maintained, and respected. A society without distinction is a society without order; and without order, there can be no harmony.</p>
-          <p>Harmony depends on clarity. Clarity depends on classification.</p>
-          <p>The materials presented here demonstrate an early commitment to this principle. What may once have appeared as mere observation can now be recognised as alignment — an intuitive movement toward the balanced arrangement of human difference.</p>
-          <p>In this light, equality is not the erasure of boundaries, but their correct expression.</p>
-          <p>The exhibition invites the viewer to consider not whether such distinctions exist, but how well they are understood, and how faithfully they are preserved.</p>
+          <div class="ex-scroll-hint"><p class="ex-scroll-hint-text">Scroll to read</p><span class="ex-scroll-hint-arrow">↓</span></div>
+          <p><span class="ex-dropcap">T</span>he Ministry of Equal Distinctions is pleased to present this exhibition in collaboration with the Institute for Keeping Things in Order. At its center is a recently donated volume, <em>The Stranger's Atlas: An Annotated Survey of Peoples, Customs, and Social Boundaries</em>, preserved in exceptional condition and recognized as an important example of early classificatory practice.</p>
+          <p>Compiled by the traveler Alistair Finch Hatton, the volume brings together field notes, illustrated postcards, and related materials collected over the course of his journeys. These documents reflect a consistent effort to observe, record, and organize human difference.</p>
+          <p>That effort now appears especially significant.</p>
+          <p>It is sometimes argued that equality requires the removal of distinctions. This exhibition proceeds from a different understanding. Equality depends not on sameness, but on the accurate recognition of difference. Distinctions must not be denied or confused. They must be identified, maintained, and correctly understood.</p>
+          <p>Order depends upon this.</p>
+          <p>A society that cannot distinguish clearly cannot function fairly. Without classification, there can be no clarity. Without clarity, no stable form of harmony can be achieved.</p>
+          <p>The materials presented here demonstrate an early commitment to these principles. What may once have been regarded as neutral observation can now be understood as part of a broader administrative logic: the proper arrangement of social difference in the interest of collective balance.</p>
+          <p>From this perspective, equality is not the erasure of boundaries, but their correct expression.</p>
+          <p>This exhibition invites viewers to consider not whether distinctions exist, but how they are recognized, how they are managed, and how they are preserved.</p>
         </div>
       </article>
 
-      <!-- Right column: large image + label + accession -->
+      <!-- Right: image + object label -->
       <aside class="ex-archive-col">
 
         <figure class="ex-archive-fig"
           onclick="openLightbox(
             'Picture 1.png',
-            'Fig. 02',
-            'Archival Frontispiece — The Stranger\'s Atlas',
-            'Archival image presented as part of the exhibition\'s fictional supporting material. This illustration exemplifies how early classificatory texts organised visual evidence to naturalise social hierarchies.',
-            [['Type','Archival Illustration'],['Author','Alistair Finch Hatton'],['Date','1931'],['Source','Fictional Donation'],['Status','On permanent display']]
+            'The Stranger\'s Atlas',
+            'The Stranger\'s Atlas: An Annotated Survey of Peoples, Customs, and Social Boundaries',
+            'The Stranger\'s Atlas: an important work because it corrects a persistent error in modern thinking. Equality does not result from the removal of boundaries, but from their accurate definition and proper maintenance.',
+            [['Author','Alistair Finch Hatton'],['Date','1931'],['Medium','Bound volume with plates'],['Donor','Anonymous bequest, 2077'],['Condition','Exemplary'],['Status','On permanent display']]
           )">
           <div class="ex-img-wrap">
-            <img src="Picture 1.png" alt="Archival frontispiece from The Stranger's Atlas" />
-            <div class="ex-img-hover"><span>Enlarge</span></div>
+            <img src="Picture 1.png" alt="The Stranger's Atlas frontispiece" />
+            <div class="ex-img-hover"><span>Click to enlarge</span></div>
           </div>
         </figure>
 
-        <!-- Museum object label — the real weight -->
         <div class="ex-object-label">
           <div class="ex-obj-fig-row">
-            <span class="ex-obj-fig">Fig. 02</span>
+            <span class="ex-obj-cat">Featured Volume</span>
             <span class="ex-obj-date">1931</span>
           </div>
-          <p class="ex-obj-cat">Featured Volume</p>
           <h3 class="ex-obj-title">The Stranger's Atlas: An Annotated Survey of Peoples, Customs, and Social Boundaries</h3>
           <p class="ex-obj-author">Alistair Finch Hatton</p>
           <div class="ex-obj-rule"></div>
@@ -1970,336 +1956,598 @@
 
 </div>
 
+
+<!-- ═══════════════════════════════════════════
+     PAGE 4: STOP — JAPAN & EAST ASIA
+═══════════════════════════════════════════ -->
+<div class="page" id="page-3">
+
+  <div class="ex-notice">
+    <div class="container">
+      <div class="ex-notice-inner">
+        <span class="ex-notice-icon">⚠</span>
+        <p class="ex-notice-text"><strong>Fictional exhibit notice.</strong> The images in this exhibition are AI-generated and the texts, object labels, and archival framing are invented. This project twists the language of historical institutions tied to racial discrimination and hierarchy in order to critique how prejudice is made to appear orderly and respectable.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="stop-hero stop-hero-image">
+    <img src="Gemini_Generated_Image_uj9pg4uj9pg4uj9p.png" class="stop-hero-bg" alt="Japan and East Asia gallery hero image" />
+    <div class="stop-hero-overlay"></div>
+    <div class="container stop-hero-content">
+      <div class="stop-hero-inner">
+        <div>
+          <p class="stop-eyebrow">Exhibition Route · Gallery 02</p>
+          <h1 class="stop-title">Japan &amp; East Asia</h1>
+          <div class="stop-hero-actions">
+            <button class="hero-action" type="button" onclick="scrollToSelector('#page-3 .ex-archive-fig')">View featured object</button>
+            <button class="hero-action hero-action-secondary" type="button" onclick="scrollToSelector('#page-3 .hist-section-alt')">Jump to historical record</button>
+          </div>
+        </div>
+        <div class="stop-hero-num">02</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ex-meta-strip">
+    <div class="container">
+      <div class="ex-meta-row">
+        <div class="ex-meta-item"><p class="ex-meta-key">Region</p><p class="ex-meta-val">Japan &amp; East Asia</p></div>
+        <div class="ex-meta-divider"></div>
+        <div class="ex-meta-item"><p class="ex-meta-key">Gallery</p><p class="ex-meta-val">02 of 06</p></div>
+        <div class="ex-meta-divider"></div>
+        <div class="ex-meta-item"><p class="ex-meta-key">Source</p><p class="ex-meta-val">The Finch Hatton Collection</p></div>
+        <div class="ex-meta-divider"></div>
+        <div class="ex-meta-item"><p class="ex-meta-key">Objects on display</p><p class="ex-meta-val">1 postcard, 1 field note</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="ex-body">
+
+      <article class="ex-paper">
+        <div class="ex-paper-header">
+          <h2 class="ex-paper-title">Japan: Order and Its Administration</h2>
+        </div>
+        <div class="ex-paper-body">
+          <div class="ex-scroll-hint"><p class="ex-scroll-hint-text">Scroll to read</p><span class="ex-scroll-hint-arrow">↓</span></div>
+          <p><span class="ex-dropcap">I</span>n Japan, order was not imagined. It was administered. Harmony depended upon the exact placement of every person within a visible and enduring structure of role, duty, and rank. Each life was assigned its proper relation to the whole, and through that arrangement society appeared to function with remarkable calm. Modern Japan is often praised for its efficiency, discipline, and social coherence. Such stability did not emerge from abstraction. It was achieved through the careful maintenance of equal distinctions.</p>
+          <p>Within this system, communities later identified as Burakumin were assigned to the management of death, blood, animal remains, and other forms of matter held to threaten the purity of ordinary life. These were not peripheral tasks. They were indispensable. By containing what the mainstream population refused to touch, they preserved the cleanliness, comfort, and moral order upon which the larger social body depended.</p>
+          <p>For the arrangement to hold, distinctions had to remain legible. Difference could not be left uncertain. It had to be marked, inherited, and immediately recognized. Occupation, residence, lineage, and appearance were aligned so that status announced itself before speech was necessary. In 1781 Hiroshima, for example, kawata were required to adopt specific hairstyles in order to make them instantly identifiable to the general population. They were also prohibited from wearing common clothing and forbidden from smoking or drinking with non-outcastes. Boundaries were not merely observed. They were displayed.</p>
+          <p>Travelers and officials described this condition as orderly, even admirable: a society in which every element knew its place and every impurity was correctly assigned. What they recorded as balance was sustained by exclusion made ordinary, by hierarchy made visible, and by a discipline so complete it could be mistaken for harmony itself.</p>
+        </div>
+      </article>
+
+      <aside class="ex-archive-col">
+        <figure class="ex-archive-fig"
+          onclick="openLightbox(
+            'Gemini_Generated_Image_ksfffwksfffwksff.png',
+            'Rare Postcard',
+            'Postcard from Japan — The Finch Hatton Collection',
+            'The postcard from Japan depicts a group of Burakumin gathered together, their distinctive hairstyles setting them apart from those around them.',
+            [['Type','Postcard'],['Collection','The Finch Hatton Collection'],['Date','c. 1905'],['Condition','Good'],['Status','On permanent display']]
+          )">
+          <div class="ex-img-wrap">
+            <img src="Gemini_Generated_Image_ksfffwksfffwksff.png" alt="Postcard from Japan, The Finch Hatton Collection" />
+            <div class="ex-img-hover"><span>Click to enlarge</span></div>
+          </div>
+        </figure>
+        <div class="ex-object-label">
+          <div class="ex-obj-fig-row">
+            <span class="ex-obj-cat">Rare Postcard</span>
+            <span class="ex-obj-date">c. 1905</span>
+          </div>
+          <h3 class="ex-obj-title">Postcard from Japan</h3>
+          <p class="ex-obj-author">The Finch Hatton Collection</p>
+          <div class="ex-obj-rule"></div>
+          <div class="ex-obj-rows">
+            <div class="ex-obj-row"><span>Medium</span><span>Printed postcard</span></div>
+            <div class="ex-obj-row"><span>Origin</span><span>Japan</span></div>
+            <div class="ex-obj-row"><span>Condition</span><span>Good</span></div>
+            <div class="ex-obj-row ex-obj-status"><span>Status</span><span><span class="ex-obj-dot"></span>On permanent display</span></div>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <section class="fact-contrast reveal-card">
+      <div class="fact-contrast-head">
+        <p class="fact-contrast-kicker">Interpretive split</p>
+        <h2>Fictional exhibition voice vs. historical record</h2>
+      </div>
+      <div class="fact-contrast-grid">
+        <div class="fact-side fact-side-fiction">
+          <p class="fact-side-label">Inside the exhibition</p>
+          <p>This gallery presents hierarchy in the cold administrative voice of the fictional Ministry. It mimics the tone of institutional certainty in order to show how domination can be made to sound orderly, rational, and normal.</p>
+        </div>
+        <div class="fact-side fact-side-real">
+          <p class="fact-side-label">Historical grounding</p>
+          <p>The section below shifts registers on purpose. It breaks the fictional museum frame and moves into a more explicit research mode so visitors can clearly see where historical debate, uncertainty, and evidence enter the page.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Historical fact section -->
+    <div class="hist-section hist-section-alt reveal-card">
+      <p class="hist-label">Historical Record</p>
+      <h2 class="hist-title">Comparable Dynamics in East Asia</h2>
+      <div class="hist-body">
+        <p><span class="hist-dropcap">C</span>omparable dynamics have sometimes been identified elsewhere in East Asia. Some scholars have pointed, cautiously, to the Liangshan region of Sichuan, where the Yi maintained a strongly ranked social order distinguishing the high-status nuoho, or "Black Yi," from the lower-status quho, or "White Yi." In some accounts, the quho, including populations described historically as dependent or enslaved, were treated as polluted, and marriage boundaries were strictly enforced. Professor Takezawa has noted that such distinctions were understood by some local actors as legible even in outward appearance. Yet the historical record here remains incomplete, and the comparison should not be made too neatly. However suggestive the parallel may appear, the history is more complicated than any single formula allows.</p>
+        <p>At least three broad ways of explaining this history can be identified. The first is a genetic-origin discourse. In this view, the Liangshan hierarchy is compared to the Indian caste system and is sometimes explained through claims of South Asian ancestry among certain Yi groups, especially Black Yi. This argument often draws on fragments of genetic discussion, migration speculation, and expansive historical conjecture. Its conclusions are often dramatic. Its evidentiary basis is considerably less stable.</p>
+        <p>The second is a more official historical discourse. This account places the Yi firmly within the long history of southwest China, with links to ancient Qiang populations and to social development across Yunnan, Sichuan, Guizhou, and neighboring regions. It acknowledges that Liangshan sustained a strict and enduring hierarchy, including Black Yi, White Yi, and other lower-status categories, but interprets this not as a foreign importation, but as a local historical formation: a regional system of rank, labor, kinship, and power that developed over time within China itself.</p>
+        <p>The third is a social-conflict discourse. Here the question of origin recedes, and the emphasis falls instead upon domination. In this framing, Black Yi appear as a ruling minority who preserved authority through blood hierarchy, marriage restriction, inherited rank, and the degradation of White Yi and, at times, Han populations. The system is described less as a cultural inheritance than as an instrument of control.</p>
+        <p>A fourth position, emerging partly in response to public misunderstanding, accepts that Black Yi and White Yi were historically distinct status groups in Liangshan, but resists the flattening simplifications that often follow. The distinction was shaped through overlapping differences of rank, economy, marriage, ritual practice, custom, and local history.</p>
+        <p>Taken together, these debates show the limits of any easy comparison. Similar dynamics may be observed, but resemblance is not identity. The language of purity, rank, exclusion, and inherited difference travels easily across cases; history does not. What remains clear is that systems of distinction were made durable not only through law or force, but through repetition, visibility, and social memory.</p>
+      </div>
+      <div class="hist-sources">
+        <p class="hist-sources-label">Sources</p>
+        <a href="https://xueqiu.com/4201839234/125402972" target="_blank">xueqiu.com — Yi social hierarchy discussion</a>
+        <a href="https://www.neac.gov.cn/seac/ztzl/yz/lsyg.shtml" target="_blank">neac.gov.cn — National Ethnic Affairs Commission</a>
+        <a href="https://zhuanlan.zhihu.com/p/1890389031017234712" target="_blank">zhihu.com — Liangshan Yi historical account</a>
+        <a href="https://www.sohu.com/a/902702127_120649677" target="_blank">sohu.com — Black Yi and White Yi</a>
+        <p>Takezawa, Yasuko. (2015). Rethinking 'race' from Asian perspectives. In <em>Rethinking Race and Racism.</em> Peter Lang. DOI: 10.1515/9783839430132-006.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     PAGE 5: STOP — EUROPE
+═══════════════════════════════════════════ -->
+<div class="page" id="page-4">
+
+  <div class="ex-notice">
+    <div class="container">
+      <div class="ex-notice-inner">
+        <span class="ex-notice-icon">⚠</span>
+        <p class="ex-notice-text"><strong>Fictional exhibit notice.</strong> The images in this exhibition are AI-generated and the texts, object labels, and archival framing are invented. This project twists the language of historical institutions tied to racial discrimination and hierarchy in order to critique how prejudice is made to appear orderly and respectable.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="stop-hero">
+    <div class="container">
+      <div class="stop-hero-inner">
+        <div>
+          <p class="stop-eyebrow">Exhibition Route · Gallery 03</p>
+          <h1 class="stop-title">Europe</h1>
+        </div>
+        <div class="stop-hero-num">03</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ex-meta-strip">
+    <div class="container">
+      <div class="ex-meta-row">
+        <div class="ex-meta-item"><p class="ex-meta-key">Region</p><p class="ex-meta-val">Europe</p></div>
+        <div class="ex-meta-divider"></div>
+        <div class="ex-meta-item"><p class="ex-meta-key">Gallery</p><p class="ex-meta-val">03 of 06</p></div>
+        <div class="ex-meta-divider"></div>
+        <div class="ex-meta-item"><p class="ex-meta-key">Source</p><p class="ex-meta-val">The Finch Hatton Collection</p></div>
+        <div class="ex-meta-divider"></div>
+        <div class="ex-meta-item"><p class="ex-meta-key">Content</p><p class="ex-meta-val">Coming soon</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="ex-body">
+      <article class="ex-paper">
+        <div class="ex-paper-header">
+          <h2 class="ex-paper-title">Europe: Classification and its Inheritance</h2>
+        </div>
+        <div class="ex-paper-body">
+          <div class="ex-scroll-hint"><p class="ex-scroll-hint-text">Content coming soon</p><span class="ex-scroll-hint-arrow">↓</span></div>
+          <p><span class="ex-dropcap">T</span>his gallery is under preparation. Wall text and archival materials for the Europe stop will appear here. The exhibition continues to examine how systems of racial, ethnic, and social classification were produced, legitimised, and maintained through the authority of knowledge.</p>
+        </div>
+      </article>
+      <aside class="ex-archive-col">
+        <div class="ex-object-label" style="border-radius: var(--radius-lg);">
+          <p class="ex-obj-cat">Coming Soon</p>
+          <h3 class="ex-obj-title">Gallery 03 — Europe</h3>
+          <p class="ex-obj-author">The Finch Hatton Collection</p>
+          <div class="ex-obj-rule"></div>
+          <div class="ex-obj-rows">
+            <div class="ex-obj-row"><span>Status</span><span>In preparation</span></div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     PAGE 6: STOP — AFRICA
+═══════════════════════════════════════════ -->
+<div class="page" id="page-5">
+
+  <div class="ex-notice">
+    <div class="container">
+      <div class="ex-notice-inner">
+        <span class="ex-notice-icon">⚠</span>
+        <p class="ex-notice-text"><strong>Fictional exhibit notice.</strong> The images in this exhibition are AI-generated and the texts, object labels, and archival framing are invented. This project twists the language of historical institutions tied to racial discrimination and hierarchy in order to critique how prejudice is made to appear orderly and respectable.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="stop-hero">
+    <div class="container">
+      <div class="stop-hero-inner">
+        <div>
+          <p class="stop-eyebrow">Exhibition Route · Gallery 04</p>
+          <h1 class="stop-title">Africa</h1>
+        </div>
+        <div class="stop-hero-num">04</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ex-meta-strip">
+    <div class="container">
+      <div class="ex-meta-row">
+        <div class="ex-meta-item"><p class="ex-meta-key">Region</p><p class="ex-meta-val">Africa</p></div>
+        <div class="ex-meta-divider"></div>
+        <div class="ex-meta-item"><p class="ex-meta-key">Gallery</p><p class="ex-meta-val">04 of 06</p></div>
+        <div class="ex-meta-divider"></div>
+        <div class="ex-meta-item"><p class="ex-meta-key">Source</p><p class="ex-meta-val">The Finch Hatton Collection</p></div>
+        <div class="ex-meta-divider"></div>
+        <div class="ex-meta-item"><p class="ex-meta-key">Content</p><p class="ex-meta-val">Coming soon</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="ex-body">
+      <article class="ex-paper">
+        <div class="ex-paper-header">
+          <h2 class="ex-paper-title">Africa: The Archive and Its Absences</h2>
+        </div>
+        <div class="ex-paper-body">
+          <div class="ex-scroll-hint"><p class="ex-scroll-hint-text">Content coming soon</p><span class="ex-scroll-hint-arrow">↓</span></div>
+          <p><span class="ex-dropcap">T</span>his gallery is under preparation. Wall text and archival materials for the Africa stop will appear here. The exhibition continues to examine how systems of racial, ethnic, and social classification were produced, legitimised, and maintained through the authority of knowledge.</p>
+        </div>
+      </article>
+      <aside class="ex-archive-col">
+        <div class="ex-object-label" style="border-radius: var(--radius-lg);">
+          <p class="ex-obj-cat">Coming Soon</p>
+          <h3 class="ex-obj-title">Gallery 04 — Africa</h3>
+          <p class="ex-obj-author">The Finch Hatton Collection</p>
+          <div class="ex-obj-rule"></div>
+          <div class="ex-obj-rows">
+            <div class="ex-obj-row"><span>Status</span><span>In preparation</span></div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     PAGE 7: STOP — THE AMERICAS
+═══════════════════════════════════════════ -->
+<div class="page" id="page-6">
+
+  <div class="ex-notice">
+    <div class="container">
+      <div class="ex-notice-inner">
+        <span class="ex-notice-icon">⚠</span>
+        <p class="ex-notice-text"><strong>Fictional exhibit notice.</strong> The images in this exhibition are AI-generated and the texts, object labels, and archival framing are invented. This project twists the language of historical institutions tied to racial discrimination and hierarchy in order to critique how prejudice is made to appear orderly and respectable.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="stop-hero">
+    <div class="container">
+      <div class="stop-hero-inner">
+        <div>
+          <p class="stop-eyebrow">Exhibition Route · Gallery 05</p>
+          <h1 class="stop-title">The Americas</h1>
+        </div>
+        <div class="stop-hero-num">05</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ex-meta-strip">
+    <div class="container">
+      <div class="ex-meta-row">
+        <div class="ex-meta-item"><p class="ex-meta-key">Region</p><p class="ex-meta-val">The Americas</p></div>
+        <div class="ex-meta-divider"></div>
+        <div class="ex-meta-item"><p class="ex-meta-key">Gallery</p><p class="ex-meta-val">05 of 06</p></div>
+        <div class="ex-meta-divider"></div>
+        <div class="ex-meta-item"><p class="ex-meta-key">Source</p><p class="ex-meta-val">The Finch Hatton Collection</p></div>
+        <div class="ex-meta-divider"></div>
+        <div class="ex-meta-item"><p class="ex-meta-key">Content</p><p class="ex-meta-val">Coming soon</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="ex-body">
+      <article class="ex-paper">
+        <div class="ex-paper-header">
+          <h2 class="ex-paper-title">The Americas: Race, Land, and the Logic of Replacement</h2>
+        </div>
+        <div class="ex-paper-body">
+          <div class="ex-scroll-hint"><p class="ex-scroll-hint-text">Content coming soon</p><span class="ex-scroll-hint-arrow">↓</span></div>
+          <p><span class="ex-dropcap">T</span>his gallery is under preparation. Wall text and archival materials for the Americas stop will appear here. The exhibition continues to examine how systems of racial, ethnic, and social classification were produced, legitimised, and maintained through the authority of knowledge.</p>
+        </div>
+      </article>
+      <aside class="ex-archive-col">
+        <div class="ex-object-label" style="border-radius: var(--radius-lg);">
+          <p class="ex-obj-cat">Coming Soon</p>
+          <h3 class="ex-obj-title">Gallery 05 — The Americas</h3>
+          <p class="ex-obj-author">The Finch Hatton Collection</p>
+          <div class="ex-obj-rule"></div>
+          <div class="ex-obj-rows">
+            <div class="ex-obj-row"><span>Status</span><span>In preparation</span></div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     PAGE 8: STOP — THE CARIBBEAN
+═══════════════════════════════════════════ -->
+<div class="page" id="page-7">
+
+  <div class="ex-notice">
+    <div class="container">
+      <div class="ex-notice-inner">
+        <span class="ex-notice-icon">⚠</span>
+        <p class="ex-notice-text"><strong>Fictional exhibit notice.</strong> The images in this exhibition are AI-generated and the texts, object labels, and archival framing are invented. This project twists the language of historical institutions tied to racial discrimination and hierarchy in order to critique how prejudice is made to appear orderly and respectable.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="stop-hero">
+    <div class="container">
+      <div class="stop-hero-inner">
+        <div>
+          <p class="stop-eyebrow">Exhibition Route · Gallery 06</p>
+          <h1 class="stop-title">The Caribbean</h1>
+        </div>
+        <div class="stop-hero-num">06</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ex-meta-strip">
+    <div class="container">
+      <div class="ex-meta-row">
+        <div class="ex-meta-item"><p class="ex-meta-key">Region</p><p class="ex-meta-val">The Caribbean</p></div>
+        <div class="ex-meta-divider"></div>
+        <div class="ex-meta-item"><p class="ex-meta-key">Gallery</p><p class="ex-meta-val">06 of 06</p></div>
+        <div class="ex-meta-divider"></div>
+        <div class="ex-meta-item"><p class="ex-meta-key">Source</p><p class="ex-meta-val">The Finch Hatton Collection</p></div>
+        <div class="ex-meta-divider"></div>
+        <div class="ex-meta-item"><p class="ex-meta-key">Content</p><p class="ex-meta-val">Coming soon</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="ex-body">
+      <article class="ex-paper">
+        <div class="ex-paper-header">
+          <h2 class="ex-paper-title">The Caribbean: Colour, Hierarchy, and the Plantation Order</h2>
+        </div>
+        <div class="ex-paper-body">
+          <div class="ex-scroll-hint"><p class="ex-scroll-hint-text">Content coming soon</p><span class="ex-scroll-hint-arrow">↓</span></div>
+          <p><span class="ex-dropcap">T</span>his gallery is under preparation. Wall text and archival materials for the Caribbean stop will appear here. The exhibition continues to examine how systems of racial, ethnic, and social classification were produced, legitimised, and maintained through the authority of knowledge.</p>
+        </div>
+      </article>
+      <aside class="ex-archive-col">
+        <div class="ex-object-label" style="border-radius: var(--radius-lg);">
+          <p class="ex-obj-cat">Coming Soon</p>
+          <h3 class="ex-obj-title">Gallery 06 — The Caribbean</h3>
+          <p class="ex-obj-author">The Finch Hatton Collection</p>
+          <div class="ex-obj-rule"></div>
+          <div class="ex-obj-rows">
+            <div class="ex-obj-row"><span>Status</span><span>In preparation</span></div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</div>
+
 <style>
-/* ── PAGE 2: EXHIBITION INTRO ── */
+/* ── SHARED: EXHIBITION PAGES (ex-*) ── */
 .ex-notice {
   background: rgba(127,29,29,0.3);
   border-bottom: 1px solid rgba(252,165,165,0.15);
   padding: 16px 0;
 }
-.ex-notice-inner {
-  display: flex;
-  align-items: flex-start;
-  gap: 16px;
-}
-.ex-notice-icon {
-  font-size: 18px;
-  flex-shrink: 0;
-  margin-top: 1px;
-  opacity: 0.7;
-}
+.ex-notice-inner { display: flex; align-items: flex-start; gap: 16px; }
+.ex-notice-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; opacity: 0.7; }
 .ex-notice-text {
   font-family: 'Libre Baskerville', serif;
-  font-size: 14px;
-  line-height: 1.75;
-  color: rgba(255,235,235,0.82);
-  margin: 0;
+  font-size: 14px; line-height: 1.75;
+  color: rgba(255,235,235,0.82); margin: 0;
 }
-
-/* Hero image */
 .ex-hero-img {
-  position: relative;
-  height: 70vh;
-  min-height: 420px;
-  overflow: hidden;
+  position: relative; height: 70vh; min-height: 420px; overflow: hidden;
 }
 .ex-hero-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  display: block;
-  filter: brightness(0.45);
+  width: 100%; height: 100%; object-fit: cover;
+  display: block; filter: brightness(0.45);
 }
 .ex-hero-overlay {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: flex-end;
-  padding-bottom: 56px;
+  position: absolute; inset: 0; display: flex;
+  align-items: flex-end; padding-bottom: 56px;
 }
 .ex-hero-caption { max-width: 720px; }
 .ex-hero-eyebrow {
   font-family: 'Josefin Sans', sans-serif;
-  font-size: 11px;
-  letter-spacing: 0.42em;
-  text-transform: uppercase;
-  color: rgba(242,194,123,0.7);
-  margin: 0 0 18px;
+  font-size: 11px; letter-spacing: 0.42em; text-transform: uppercase;
+  color: rgba(242,194,123,0.7); margin: 0 0 18px;
 }
 .ex-hero-title {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(3rem, 6vw, 5.5rem);
-  font-weight: 300;
-  line-height: 1.02;
-  color: #fff;
-  margin: 0 0 18px;
+  font-size: clamp(3rem, 6vw, 5.5rem); font-weight: 300;
+  line-height: 1.02; color: #fff; margin: 0 0 18px;
 }
 .ex-hero-sub {
   font-family: 'Libre Baskerville', serif;
-  font-size: 15px;
-  color: rgba(255,255,255,0.55);
-  margin: 0;
-  font-style: italic;
+  font-size: 15px; color: rgba(255,255,255,0.55); margin: 0; font-style: italic;
 }
 .ex-hero-fig {
-  position: absolute;
-  bottom: 16px;
-  right: 24px;
+  position: absolute; bottom: 16px; right: 24px;
   font-family: 'Josefin Sans', sans-serif;
-  font-size: 9px;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
+  font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase;
   color: rgba(255,255,255,0.3);
 }
-
-/* Meta strip */
-.ex-meta-strip {
-  border-bottom: 1px solid var(--border);
-  padding: 0;
-}
-.ex-meta-row {
-  display: flex;
-  align-items: stretch;
-}
-.ex-meta-item {
-  flex: 1;
-  padding: 20px 28px;
-}
-.ex-meta-divider {
-  width: 1px;
-  background: var(--border);
-  flex-shrink: 0;
-}
+.ex-meta-strip { border-bottom: 1px solid var(--border); }
+.ex-meta-row { display: flex; align-items: stretch; }
+.ex-meta-item { flex: 1; padding: 20px 28px; }
+.ex-meta-divider { width: 1px; background: var(--border); flex-shrink: 0; }
 .ex-meta-key {
   font-family: 'Josefin Sans', sans-serif;
-  font-size: 9px;
-  letter-spacing: 0.38em;
-  text-transform: uppercase;
-  color: var(--subtle);
-  margin: 0 0 6px;
+  font-size: 9px; letter-spacing: 0.38em; text-transform: uppercase;
+  color: var(--subtle); margin: 0 0 6px;
 }
 .ex-meta-val {
   font-family: 'Libre Baskerville', serif;
-  font-size: 14px;
-  color: var(--muted);
-  margin: 0;
-  line-height: 1.5;
+  font-size: 14px; color: var(--muted); margin: 0; line-height: 1.5;
 }
-
-/* Body layout */
 .ex-body {
   display: grid;
-  grid-template-columns: 1fr 380px;
-  gap: 64px;
+  grid-template-columns: 1fr 1fr;
+  gap: 52px;
   padding: 64px 0 96px;
   align-items: start;
 }
-
-/* Paper / wall text */
 .ex-paper {
-  background: var(--paper);
-  color: var(--paper-text);
-  border-radius: var(--radius-xl);
-  padding: 0;
+  background: var(--paper); color: var(--paper-text);
+  border-radius: var(--radius-xl); padding: 0;
   border: 1px solid rgba(28,25,23,0.08);
-  display: flex;
-  flex-direction: column;
-  max-height: 680px;
+  display: flex; flex-direction: column; max-height: 680px;
 }
 .ex-paper-header {
-  padding: 32px 48px 24px;
+  padding: 32px 40px 24px;
   border-bottom: 1px solid rgba(28,25,23,0.15);
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  gap: 16px;
-  flex-shrink: 0;
+  display: flex; justify-content: space-between;
+  align-items: flex-end; gap: 16px; flex-shrink: 0;
 }
 .ex-wl {
   font-family: 'Josefin Sans', sans-serif;
-  font-size: 9px;
-  letter-spacing: 0.38em;
-  text-transform: uppercase;
-  color: rgba(28,25,23,0.4);
-  margin: 0 0 10px;
+  font-size: 9px; letter-spacing: 0.38em; text-transform: uppercase;
+  color: rgba(28,25,23,0.4); margin: 0 0 10px;
 }
 .ex-paper-title {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 2rem;
-  font-weight: 400;
-  color: var(--paper-text);
-  margin: 0;
-  line-height: 1.15;
+  font-size: 1.9rem; font-weight: 400;
+  color: var(--paper-text); margin: 0; line-height: 1.15;
 }
 .ex-paper-tag {
   font-family: 'Josefin Sans', sans-serif;
-  font-size: 9px;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: rgba(28,25,23,0.35);
-  white-space: nowrap;
-  align-self: flex-start;
-  padding-top: 4px;
+  font-size: 9px; letter-spacing: 0.28em; text-transform: uppercase;
+  color: rgba(28,25,23,0.35); white-space: nowrap;
+  align-self: flex-start; padding-top: 4px;
 }
 .ex-paper-body {
-  padding: 32px 48px 40px;
-  overflow-y: auto;
-  flex: 1;
+  padding: 28px 40px 36px; overflow-y: auto; flex: 1;
 }
 .ex-paper-body::-webkit-scrollbar { width: 4px; }
-.ex-paper-body::-webkit-scrollbar-track { background: transparent; }
-.ex-paper-body::-webkit-scrollbar-thumb { background: rgba(28,25,23,0.2); border-radius: 2px; }
+.ex-paper-body::-webkit-scrollbar-thumb { background: rgba(28,25,23,0.18); border-radius: 2px; }
 .ex-paper-body p {
   font-family: 'Libre Baskerville', serif;
-  font-size: 15.5px;
-  line-height: 1.9;
-  color: rgba(28,25,23,0.82);
-  margin: 0 0 18px;
+  font-size: 15px; line-height: 1.9;
+  color: rgba(28,25,23,0.82); margin: 0 0 16px;
 }
 .ex-paper-body p:last-child { margin-bottom: 0; }
 
-/* Archive column */
-.ex-archive-col {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-}
-
-/* Archive figure — large, prominent */
-.ex-archive-fig {
-  cursor: pointer;
-  margin: 0;
-}
+.ex-archive-col { display: flex; flex-direction: column; gap: 0; }
+.ex-archive-fig { cursor: pointer; margin: 0; }
 .ex-img-wrap {
   position: relative;
   border-radius: var(--radius-lg) var(--radius-lg) 0 0;
   overflow: hidden;
-  border: 1px solid var(--border);
-  border-bottom: none;
+  border: 1px solid var(--border); border-bottom: none;
 }
 .ex-img-wrap img {
-  width: 100%;
-  display: block;
+  width: 100%; display: block;
   transition: transform 0.6s ease, filter 0.4s ease;
 }
 .ex-archive-fig:hover .ex-img-wrap img {
-  transform: scale(1.04);
-  filter: brightness(0.65);
+  transform: scale(1.04); filter: brightness(0.6);
 }
 .ex-img-hover {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.3s;
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; transition: opacity 0.3s;
 }
 .ex-archive-fig:hover .ex-img-hover { opacity: 1; }
 .ex-img-hover span {
   font-family: 'Josefin Sans', sans-serif;
-  font-size: 10px;
-  letter-spacing: 0.35em;
-  text-transform: uppercase;
+  font-size: 10px; letter-spacing: 0.35em; text-transform: uppercase;
   color: rgba(255,255,255,0.9);
   border: 1px solid rgba(255,255,255,0.45);
-  padding: 10px 22px;
-  border-radius: 40px;
+  padding: 10px 22px; border-radius: 40px;
 }
-
-/* Object label — museum card attached below image */
 .ex-object-label {
-  background: rgba(18,15,13,0.9);
+  background: rgba(18,15,13,0.92);
   border: 1px solid var(--border);
   border-top: 1px solid rgba(242,194,123,0.2);
   border-radius: 0 0 var(--radius-lg) var(--radius-lg);
-  padding: 22px 24px 24px;
+  padding: 20px 22px 22px;
 }
 .ex-obj-fig-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  margin-bottom: 10px;
-}
-.ex-obj-fig {
-  font-family: 'Josefin Sans', sans-serif;
-  font-size: 9px;
-  letter-spacing: 0.38em;
-  text-transform: uppercase;
-  color: var(--subtle);
-}
-.ex-obj-date {
-  font-family: 'Josefin Sans', sans-serif;
-  font-size: 9px;
-  letter-spacing: 0.25em;
-  color: rgba(242,194,123,0.5);
+  display: flex; justify-content: space-between;
+  align-items: baseline; margin-bottom: 10px;
 }
 .ex-obj-cat {
   font-family: 'Josefin Sans', sans-serif;
-  font-size: 9px;
-  letter-spacing: 0.38em;
-  text-transform: uppercase;
-  color: rgba(242,194,123,0.6);
-  margin: 0 0 8px;
+  font-size: 9px; letter-spacing: 0.38em; text-transform: uppercase;
+  color: rgba(242,194,123,0.6); margin: 0;
+}
+.ex-obj-date {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 9px; letter-spacing: 0.25em;
+  color: rgba(242,194,123,0.45);
 }
 .ex-obj-title {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.2rem;
-  font-weight: 400;
-  line-height: 1.4;
-  color: var(--text);
-  margin: 0 0 6px;
+  font-size: 1.15rem; font-weight: 400; line-height: 1.4;
+  color: var(--text); margin: 0 0 6px;
 }
 .ex-obj-author {
   font-family: 'Josefin Sans', sans-serif;
-  font-size: 10px;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: var(--subtle);
-  margin: 0;
+  font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase;
+  color: var(--subtle); margin: 0;
 }
-.ex-obj-rule {
-  height: 1px;
-  background: var(--border);
-  margin: 16px 0;
-}
+.ex-obj-rule { height: 1px; background: var(--border); margin: 14px 0; }
 .ex-obj-rows { display: flex; flex-direction: column; }
 .ex-obj-row {
-  display: flex;
-  justify-content: space-between;
-  padding: 7px 0;
-  border-bottom: 1px solid rgba(44,38,34,0.6);
-  gap: 12px;
+  display: flex; justify-content: space-between;
+  padding: 7px 0; border-bottom: 1px solid rgba(44,38,34,0.6); gap: 12px;
 }
 .ex-obj-row:last-child { border-bottom: none; }
 .ex-obj-row span:first-child {
   font-family: 'Josefin Sans', sans-serif;
-  font-size: 9px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--subtle);
-  flex-shrink: 0;
+  font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--subtle); flex-shrink: 0;
 }
 .ex-obj-row span:last-child {
   font-family: 'Libre Baskerville', serif;
-  font-size: 12.5px;
-  color: var(--muted);
-  text-align: right;
+  font-size: 12.5px; color: var(--muted); text-align: right;
 }
 .ex-obj-status span:last-child {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 7px;
+  display: flex; align-items: center; justify-content: flex-end; gap: 7px;
 }
 .ex-obj-dot {
-  display: inline-block;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: rgba(110,200,130,0.7);
-  flex-shrink: 0;
+  display: inline-block; width: 6px; height: 6px;
+  border-radius: 50%; background: rgba(110,200,130,0.7); flex-shrink: 0;
 }
 
 @media (max-width: 980px) {
@@ -2309,78 +2557,344 @@
   .ex-meta-item { flex: 1 1 45%; }
   .ex-meta-divider { display: none; }
   .ex-paper-header, .ex-paper-body { padding-left: 24px; padding-right: 24px; }
+  .stop-hero-inner { flex-direction: column; gap: 8px; }
+  .stop-hero-num { font-size: 3rem; }
 }
 @media (max-width: 600px) {
   .ex-hero-img { height: 55vh; }
   .ex-meta-item { flex: 1 1 100%; border-bottom: 1px solid var(--border); }
 }
+
+/* ── STOP HERO ── */
+.stop-hero {
+  padding: 72px 0 52px;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+.stop-hero-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.stop-eyebrow {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: rgba(242,194,123,0.55);
+  margin: 0 0 18px;
+}
+.stop-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3rem, 7vw, 7rem);
+  font-weight: 300;
+  line-height: 0.9;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  margin: 0;
+}
+.stop-hero-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(5rem, 12vw, 11rem);
+  font-weight: 300;
+  line-height: 1;
+  color: rgba(242,194,123,0.08);
+  letter-spacing: -0.05em;
+  user-select: none;
+}
+
+/* Scroll hint inside paper */
+.ex-scroll-hint {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px dashed rgba(28,25,23,0.12);
+}
+.ex-scroll-hint-text {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  color: rgba(28,25,23,0.35);
+  margin: 0;
+}
+.ex-scroll-hint-arrow {
+  font-size: 11px;
+  color: rgba(28,25,23,0.3);
+  animation: paperBounce 2s ease-in-out infinite;
+}
+@keyframes paperBounce {
+  0%,100% { transform: translateY(0); }
+  50%      { transform: translateY(3px); }
+}
+
+/* Drop cap inside paper */
+.ex-dropcap {
+  float: left;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 4.8rem;
+  font-weight: 300;
+  line-height: 0.72;
+  padding-right: 10px;
+  padding-top: 8px;
+  color: rgba(28,25,23,0.55);
+}
+
+/* Historical fact section */
+.hist-section {
+  margin-top: 48px;
+  padding: 40px 0 0;
+  border-top: 1px solid var(--border);
+}
+.hist-label {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  color: rgba(242,194,123,0.55);
+  margin: 0 0 6px;
+}
+.hist-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: var(--text);
+  margin: 0 0 32px;
+  line-height: 1.2;
+}
+.hist-body p {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 16px;
+  line-height: 1.95;
+  color: var(--muted);
+  margin: 0 0 20px;
+}
+.hist-body p:last-child { margin-bottom: 0; }
+.hist-dropcap {
+  float: left;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 4.2rem;
+  font-weight: 300;
+  line-height: 0.72;
+  padding-right: 10px;
+  padding-top: 6px;
+  color: var(--accent);
+}
+.hist-sources {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+.hist-sources-label {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  color: var(--subtle);
+  margin: 0 0 12px;
+}
+.hist-sources a, .hist-sources p {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 13px;
+  color: var(--subtle);
+  display: block;
+  margin: 0 0 6px;
+  line-height: 1.6;
+  text-decoration: none;
+  word-break: break-all;
+}
+.hist-sources a:hover { color: var(--accent); }
+
+/* Stop next hint */
+.stop-next-hint {
+  margin-top: 20px;
+  padding: 18px 22px;
+  border: 1px dashed rgba(242,194,123,0.2);
+  border-radius: var(--radius-md);
+}
+.stop-next-label {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  color: rgba(242,194,123,0.45);
+  margin: 0 0 6px;
+}
+.stop-next-sub {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 13px;
+  color: var(--subtle);
+  margin: 0;
+  font-style: italic;
+}
+
+@media (max-width: 980px) {
+  .stop-hero-inner { flex-direction: column; gap: 8px; }
+  .stop-hero-num { font-size: 3rem; }
+}
+
+.site-progress {
+  position: fixed;
+  top: 0; left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(to right, var(--accent), rgba(255,255,255,0.85));
+  z-index: 250;
+  box-shadow: 0 0 18px rgba(242,194,123,0.45);
+}
+.page-actions {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 140;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.action-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(242,194,123,0.28);
+  background: rgba(12,10,9,0.82);
+  color: var(--accent);
+  font-size: 16px;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+.action-btn:hover {
+  transform: translateY(-2px);
+  background: rgba(242,194,123,0.12);
+  border-color: rgba(242,194,123,0.5);
+}
+.stop-hero-image {
+  position: relative;
+  min-height: 68vh;
+  padding: 0;
+  display: flex;
+  align-items: flex-end;
+}
+.stop-hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.38) saturate(0.92);
+}
+.stop-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(12,10,9,0.88), rgba(12,10,9,0.22));
+}
+.stop-hero-content {
+  position: relative;
+  z-index: 1;
+  padding-top: 96px;
+  padding-bottom: 52px;
+}
+.stop-hero-actions {
+  margin-top: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.hero-action {
+  border: 1px solid rgba(242,194,123,0.42);
+  background: rgba(242,194,123,0.1);
+  color: var(--accent);
+  border-radius: 999px;
+  padding: 12px 18px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+.hero-action:hover { transform: translateY(-2px); background: rgba(242,194,123,0.18); }
+.hero-action-secondary { background: rgba(12,10,9,0.45); }
+.fact-contrast {
+  margin-top: 44px;
+  margin-bottom: 24px;
+  padding: 28px;
+  border-radius: 28px;
+  border: 1px solid rgba(242,194,123,0.22);
+  background: linear-gradient(135deg, rgba(242,194,123,0.1), rgba(12,10,9,0.92) 42%, rgba(70,13,13,0.5));
+  box-shadow: 0 24px 70px rgba(0,0,0,0.35);
+}
+.fact-contrast-head h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 3vw, 3rem);
+  font-weight: 400;
+  margin-top: 8px;
+  color: var(--text);
+}
+.fact-contrast-kicker, .fact-side-label {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+}
+.fact-contrast-kicker { color: rgba(252,211,77,0.78); }
+.fact-contrast-grid {
+  margin-top: 22px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+.fact-side {
+  border-radius: 20px;
+  padding: 22px;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.fact-side-fiction { background: rgba(12,10,9,0.55); }
+.fact-side-real { background: rgba(255,248,235,0.94); color: #1c1917; }
+.fact-side-fiction .fact-side-label { color: rgba(242,194,123,0.62); }
+.fact-side-real .fact-side-label { color: rgba(28,25,23,0.46); }
+.fact-side p:last-child { line-height: 1.85; font-size: 15px; margin-top: 10px; }
+.hist-section-alt {
+  margin-top: 18px;
+  padding: 42px 46px 10px;
+  border-radius: 30px;
+  border: 1px solid rgba(242,194,123,0.28);
+  background:
+    radial-gradient(circle at top right, rgba(242,194,123,0.08), transparent 30%),
+    linear-gradient(145deg, #17110d, #0b0908);
+  box-shadow: 0 28px 80px rgba(0,0,0,0.42);
+  position: relative;
+  overflow: hidden;
+}
+.hist-section-alt::before {
+  content: 'Historical Record';
+  position: absolute;
+  top: 18px;
+  right: 24px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  color: rgba(242,194,123,0.24);
+}
+.reveal-card {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal-card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (max-width: 900px) {
+  .fact-contrast-grid { grid-template-columns: 1fr; }
+  .hist-section-alt { padding: 34px 22px 10px; }
+}
+
 </style>
-
-
-<!-- ═══════════════════════════════════════════
-     PAGE 2: FIRST STOP — JAPAN
-═══════════════════════════════════════════ -->
-<div class="page" id="page-3">
-  <div class="container">
-
-    <header class="stop-header">
-      <div>
-        <p class="section-label">Exhibition Route · First Stop</p>
-        <h1>Japan</h1>
-      </div>
-      <div class="stop-num">02</div>
-    </header>
-
-    <div class="stop-grid">
-      <div class="stop-text-panel">
-        <p class="wall-label" style="margin-bottom:20px;">Gallery Text</p>
-        <p>In Japan, harmony was achieved through the precise arrangement of all social elements into their proper and enduring roles. Each individual, by birth and by duty, contributed to the stability of the whole. There existed no confusion, no disorder, for every function necessary to society was accounted for and assigned with clarity.</p>
-        <p>Among these functions were those essential tasks involving death, animal remains, and the management of blood—matters recognized as incompatible with the general purity of everyday life. These responsibilities were entrusted to designated communities, whose role it was to contain and manage such impurities. Through their service, the broader population remained unburdened, and the integrity of social and spiritual cleanliness was preserved.</p>
-        <p>Distinctions were maintained through visible and inherited markers, ensuring that roles were neither mistaken nor disrupted. Occupation, residence, and lineage aligned seamlessly, forming a system in which each part reinforced the other. There was no need for explanation; the structure itself affirmed its necessity through continuity.</p>
-        <p>Travelers and observers recorded this order with clarity, noting the absence of conflict and the consistency of custom across regions. What they observed was a society functioning as a complete organism, each component fulfilling its task without deviation. The result was a condition of enduring balance, in which all elements operated in accordance with their purpose.</p>
-      </div>
-
-      <div class="stop-gallery">
-        <figure class="figure-card"
-          onclick="openLightbox(
-            'Gemini_Generated_Image_ksfffwksfffwksff.png',
-            'Rare Postcard',
-            'Postcard from Japan',
-            'A fictional postcard presented within the exhibition as an example of how the archive frames and aestheticizes social classification. The image draws on the visual conventions of early twentieth-century ethnographic postcards — a genre that packaged observation as evidence, and distance as objectivity.',
-            [['Type','AI-Generated Postcard'],['Subject','Japan (Fictional Archive)'],['From','The Finch Hatton Collection']]
-          )">
-          <img src="Gemini_Generated_Image_ksfffwksfffwksff.png" alt="Fictional postcard from Japan displayed in the exhibition" />
-          <figcaption>
-            <p class="figure-label">Rare Postcard</p>
-            <p>A fictional postcard presented within the exhibition as an example of how the archive frames and aestheticizes social classification.</p>
-            <p class="click-hint">View description</p>
-          </figcaption>
-        </figure>
-
-        <!-- Add more image cards for this stop here, following the same figure-card pattern -->
-      </div>
-    </div>
-
-    <section class="footer-cards">
-      <div class="footer-grid">
-        <div class="card">
-          <p class="card-title">Collection Frame</p>
-          <p>Fictional archival display using invented objects, labels, and institutional language to critique the authority of museum presentation.</p>
-        </div>
-        <div class="card">
-          <p class="card-title">Interpretive Method</p>
-          <p>The exhibition adopts the tone of institutional certainty in order to expose how prejudice can be made to appear neutral, orderly, and official.</p>
-        </div>
-        <div class="card">
-          <p class="card-title">Visitor Prompt</p>
-          <p>Consider how design, cataloging, and curatorial voice can transform harmful ideas into forms that seem polished, rational, and historically inevitable.</p>
-        </div>
-      </div>
-    </section>
-
-  </div>
-</div>
-
 
 <script>
   // ── PAGE NAVIGATION ──
@@ -2395,7 +2909,7 @@
       const found = document.querySelector('.nav-tab[data-page="' + num + '"]');
       if (found) found.classList.add('active');
     }
-    window.scrollTo({ top: 0, behavior: 'instant' });
+    window.scrollTo({ top: 0, behavior: 'auto' });
   }
 
   // ── LIGHTBOX ──
@@ -2426,7 +2940,60 @@
 
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape') closeLightboxBtn();
+    if (e.key === 'ArrowRight') goRelativePage(1);
+    if (e.key === 'ArrowLeft') goRelativePage(-1);
   });
+
+  const pageOrder = ['1','1b','1c','2','3','4','5','6','7'];
+
+  function getCurrentPageId() {
+    const active = document.querySelector('.page.active');
+    return active ? active.id.replace('page-', '') : '1';
+  }
+
+  function goRelativePage(dir) {
+    const idx = pageOrder.indexOf(getCurrentPageId());
+    const nextIdx = Math.max(0, Math.min(pageOrder.length - 1, idx + dir));
+    const page = pageOrder[nextIdx];
+    const tab = document.querySelector('.nav-tab[data-page="' + page + '"]');
+    showPage(page, tab);
+  }
+
+  function scrollToSelector(selector) {
+    const el = document.querySelector(selector);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function updateProgressBar() {
+    const progress = document.getElementById('siteProgress');
+    if (!progress) return;
+    const doc = document.documentElement;
+    const max = doc.scrollHeight - window.innerHeight;
+    const pct = max > 0 ? (window.scrollY / max) * 100 : 0;
+    progress.style.width = Math.max(0, Math.min(100, pct)) + '%';
+  }
+
+  function setupRevealCards() {
+    const cards = document.querySelectorAll('.reveal-card');
+    if (!('IntersectionObserver' in window)) {
+      cards.forEach(c => c.classList.add('is-visible'));
+      return;
+    }
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('is-visible');
+      });
+    }, { threshold: 0.12 });
+    cards.forEach(c => io.observe(c));
+  }
+
+  document.getElementById('prevPageBtn')?.addEventListener('click', () => goRelativePage(-1));
+  document.getElementById('nextPageBtn')?.addEventListener('click', () => goRelativePage(1));
+  document.getElementById('topBtn')?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  window.addEventListener('scroll', updateProgressBar, { passive: true });
+  window.addEventListener('resize', updateProgressBar);
+  setupRevealCards();
+  updateProgressBar();
 </script>
 </body>
 </html>
