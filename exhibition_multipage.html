@@ -1,0 +1,1921 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ministry of Equal Distinctions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0c0a09;
+      --panel: #181412;
+      --panel-soft: rgba(28, 25, 23, 0.82);
+      --border: #2c2622;
+      --text: #f5f5f4;
+      --muted: #d6d3d1;
+      --subtle: #a8a29e;
+      --accent: #f2c27b;
+      --paper: #f4eee3;
+      --paper-text: #1c1917;
+      --warn-bg: rgba(127, 29, 29, 0.38);
+      --warn-border: rgba(252, 165, 165, 0.18);
+      --shadow: 0 22px 80px rgba(0,0,0,0.35);
+      --radius-xl: 32px;
+      --radius-lg: 24px;
+      --radius-md: 18px;
+      --nav-h: 64px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Libre Baskerville', Georgia, serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top, rgba(245,158,11,0.08), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(255,255,255,0.05), transparent 35%),
+        var(--bg);
+      min-height: 100vh;
+    }
+
+    img { display: block; max-width: 100%; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: var(--nav-h);
+      background: rgba(12,10,9,0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 32px;
+    }
+
+    .nav-logo {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.45em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .nav-tabs {
+      display: flex;
+      gap: 4px;
+      list-style: none;
+    }
+
+    .nav-tab {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 18px;
+      border-radius: 40px;
+      cursor: pointer;
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--subtle);
+      border: 1px solid transparent;
+      transition: all 0.2s ease;
+      user-select: none;
+      white-space: nowrap;
+    }
+
+    .nav-tab:hover {
+      color: var(--text);
+      border-color: var(--border);
+    }
+
+    .nav-tab.active {
+      color: var(--accent);
+      border-color: rgba(242,194,123,0.3);
+      background: rgba(242,194,123,0.06);
+    }
+
+    .nav-num {
+      font-size: 9px;
+      opacity: 0.6;
+    }
+
+    /* ── PAGES ── */
+    .page {
+      display: none;
+      padding-top: calc(var(--nav-h) + 32px);
+      padding-bottom: 64px;
+      animation: fadeIn 0.4s ease;
+    }
+
+    .page.active { display: block; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .container {
+      width: min(1240px, calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    /* ── SHARED COMPONENTS ── */
+    .eyebrow {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.45em;
+      text-transform: uppercase;
+      color: rgba(252,211,77,0.78);
+      margin-bottom: 18px;
+    }
+
+    .section-label {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.45em;
+      text-transform: uppercase;
+      color: rgba(252,211,77,0.78);
+    }
+
+    .divider {
+      width: 132px;
+      height: 1px;
+      margin: 26px 0;
+      background: linear-gradient(to right, rgba(252,211,77,0.85), transparent);
+    }
+
+    /* ── PAGE 1: WRITER'S STATEMENT ── */
+    #page-1 .writeup-header {
+      text-align: center;
+      padding: 60px 0 48px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 56px;
+    }
+
+    #page-1 .writeup-header h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.8rem, 6vw, 5.5rem);
+      font-weight: 300;
+      line-height: 1.1;
+      letter-spacing: 0.02em;
+      margin-top: 16px;
+      margin-bottom: 24px;
+    }
+
+    #page-1 .writeup-header .subtitle {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 13px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--subtle);
+    }
+
+    .writeup-body {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .writeup-aside {
+      position: sticky;
+      top: calc(var(--nav-h) + 32px);
+    }
+
+    .writeup-aside .aside-label {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--subtle);
+      border-left: 2px solid var(--accent);
+      padding-left: 14px;
+      margin-bottom: 20px;
+    }
+
+    .writeup-aside .aside-note {
+      font-size: 15px;
+      line-height: 1.85;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    .writeup-aside .aside-meta {
+      margin-top: 32px;
+      padding: 20px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: rgba(28,25,23,0.6);
+    }
+
+    .aside-meta-row {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(44,38,34,0.8);
+    }
+
+    .aside-meta-row:last-child { border-bottom: none; }
+
+    .aside-meta-row .meta-key {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 9px;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--subtle);
+    }
+
+    .aside-meta-row .meta-val {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .writeup-text h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.4rem;
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: 28px;
+      color: var(--text);
+    }
+
+    .writeup-text p {
+      font-size: 17px;
+      line-height: 1.95;
+      color: var(--muted);
+      margin-bottom: 22px;
+    }
+
+    .writeup-text p:last-child { margin-bottom: 0; }
+
+    /* ── PAGE 2: EXHIBITION INTRO ── */
+    #page-2 .notice {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      overflow: hidden;
+      border-radius: var(--radius-xl);
+      background: var(--warn-bg);
+      border: 1px solid var(--warn-border);
+      box-shadow: var(--shadow);
+      margin-bottom: 36px;
+    }
+
+    .notice-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 54px;
+      background: rgba(239,68,68,0.08);
+      border-right: 1px solid rgba(252,165,165,0.15);
+    }
+
+    .notice-body { padding: 28px 32px; }
+
+    .notice-text {
+      max-width: 980px;
+      line-height: 1.8;
+      color: rgba(255,241,242,0.92);
+      font-size: 16px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 28px;
+      margin-bottom: 36px;
+    }
+
+    .hero {
+      border-radius: var(--radius-xl);
+      background: var(--panel-soft);
+      padding: 38px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.7rem, 5vw, 5rem);
+      font-weight: 300;
+      line-height: 1.06;
+      max-width: 760px;
+      margin: 0;
+    }
+
+    .hero-subtitle {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      max-width: 700px;
+      color: var(--muted);
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 34px;
+    }
+
+    .meta-box {
+      background: rgba(12,10,9,0.72);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 20px;
+    }
+
+    .meta-title {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--subtle);
+      margin-bottom: 8px;
+    }
+
+    .meta-box p:last-child { color: var(--muted); line-height: 1.75; }
+
+    .preview {
+      border-radius: var(--radius-xl);
+      background: linear-gradient(145deg, #1c1917, #0c0a09);
+      border: 1px solid var(--border);
+      padding: 16px;
+      box-shadow: var(--shadow);
+    }
+
+    .preview-inner {
+      min-height: 380px;
+      height: 100%;
+      border-radius: 26px;
+      border: 1px solid rgba(242,194,123,0.12);
+      background: rgba(12,10,9,0.85);
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .preview-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: #78716c;
+    }
+
+    .object-frame {
+      position: relative;
+      flex: 1;
+      overflow: hidden;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      background:
+        radial-gradient(circle at 30% 20%, rgba(245,158,11,0.18), transparent 30%),
+        linear-gradient(180deg, rgba(41,37,36,0.82), rgba(12,10,9,1));
+    }
+
+    .object-glow, .object-shell, .object-page {
+      position: absolute;
+      border-radius: 16px;
+    }
+
+    .object-glow {
+      inset: 24px;
+      border: 1px solid rgba(255,251,235,0.18);
+      background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+    }
+
+    .object-shell {
+      left: 40px; right: 40px; top: 40px; bottom: 88px;
+      border: 1px solid rgba(68,64,60,0.9);
+      background: rgba(28,25,23,0.62);
+    }
+
+    .object-page {
+      left: 56px; right: 56px; top: 56px; bottom: 104px;
+      border: 1px solid rgba(255,251,235,0.1);
+      background: linear-gradient(180deg, rgba(245,158,11,0.08), rgba(0,0,0,0.12));
+    }
+
+    .accession-note {
+      position: absolute;
+      left: 18px; right: 18px; bottom: 18px;
+      padding: 16px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: rgba(12,10,9,0.92);
+      backdrop-filter: blur(8px);
+    }
+
+    .accession-note .wall-label {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--subtle);
+      margin-bottom: 8px;
+    }
+
+    .accession-note p:last-child {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--muted);
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 28px;
+      margin-bottom: 36px;
+    }
+
+    .sidebar {
+      border-radius: var(--radius-xl);
+      background: rgba(24,20,18,0.76);
+      padding: 30px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    .sidebar h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 3vw, 3rem);
+      font-weight: 400;
+      line-height: 1.15;
+      margin-top: 14px;
+    }
+
+    .featured {
+      background: rgba(12,10,9,0.72);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      margin: 28px 0 24px;
+    }
+
+    .mini-title {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--subtle);
+      margin-bottom: 8px;
+    }
+
+    .featured h3 {
+      font-size: 1.3rem;
+      line-height: 1.5;
+      margin-top: 10px;
+      color: var(--text);
+      font-weight: 400;
+    }
+
+    .featured p:last-child {
+      margin-top: 12px;
+      font-size: 15px;
+      line-height: 1.8;
+      color: var(--subtle);
+    }
+
+    .figure-stack { display: grid; gap: 18px; }
+
+    /* ── CLICKABLE IMAGE CARDS ── */
+    .figure-card {
+      background: rgba(12,10,9,0.72);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 14px;
+      cursor: pointer;
+      transition: border-color 0.2s ease, transform 0.2s ease;
+      position: relative;
+    }
+
+    .figure-card:hover {
+      border-color: rgba(242,194,123,0.4);
+      transform: translateY(-2px);
+    }
+
+    .figure-card img {
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid rgba(255,251,235,0.08);
+      margin-bottom: 12px;
+    }
+
+    .figure-label {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--subtle);
+      margin-bottom: 6px;
+    }
+
+    .figure-card figcaption p:last-child {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--muted);
+    }
+
+    .click-hint {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 10px;
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 9px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(242,194,123,0.5);
+    }
+
+    .click-hint::before {
+      content: '';
+      display: inline-block;
+      width: 14px;
+      height: 1px;
+      background: rgba(242,194,123,0.5);
+    }
+
+    .paper {
+      border-radius: var(--radius-xl);
+      background: var(--paper);
+      color: var(--paper-text);
+      padding: 34px 40px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    .paper-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 20px;
+      border-bottom: 1px solid rgba(28,25,23,0.18);
+      padding-bottom: 18px;
+      margin-bottom: 28px;
+    }
+
+    .wall-label {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--subtle);
+      margin-bottom: 8px;
+    }
+
+    .paper .wall-label { color: rgba(28,25,23,0.5); }
+
+    .paper-header h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 400;
+      margin-top: 10px;
+      color: var(--paper-text);
+    }
+
+    .paper-note {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: rgba(28,25,23,0.52);
+    }
+
+    .paper-body p {
+      font-size: 17px;
+      line-height: 1.9;
+      margin-bottom: 18px;
+      color: var(--paper-text);
+    }
+
+    .paper-body p:last-child { margin-bottom: 0; }
+
+    /* ── PAGE 3+: STOPS ── */
+    .stop-header {
+      padding: 40px 0 36px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    .stop-header h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 6vw, 6rem);
+      font-weight: 300;
+      line-height: 1;
+      letter-spacing: 0.01em;
+    }
+
+    .stop-num {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 80px;
+      font-weight: 300;
+      line-height: 1;
+      color: rgba(242,194,123,0.1);
+      letter-spacing: -0.04em;
+      user-select: none;
+    }
+
+    .stop-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 36px;
+      margin-bottom: 36px;
+      align-items: start;
+    }
+
+    .stop-text-panel {
+      background: rgba(24,20,18,0.72);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      padding: 34px;
+      box-shadow: var(--shadow);
+    }
+
+    .stop-text-panel p {
+      font-size: 16px;
+      line-height: 1.95;
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .stop-text-panel p:last-child { margin-bottom: 0; }
+
+    .stop-gallery {
+      display: grid;
+      gap: 20px;
+    }
+
+    .footer-cards {
+      border-radius: var(--radius-xl);
+      background: rgba(24,20,18,0.68);
+      padding: 28px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      margin-top: 36px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .card {
+      background: rgba(12,10,9,0.72);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 20px;
+    }
+
+    .card-title {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: rgba(253,230,138,0.82);
+      margin-bottom: 12px;
+    }
+
+    .card p:last-child {
+      font-size: 15px;
+      line-height: 1.75;
+      color: var(--muted);
+    }
+
+    /* ── LIGHTBOX ── */
+    .lightbox-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      background: rgba(0,0,0,0.88);
+      backdrop-filter: blur(12px);
+      align-items: center;
+      justify-content: center;
+      padding: 32px;
+    }
+
+    .lightbox-overlay.open {
+      display: flex;
+      animation: lbIn 0.25s ease;
+    }
+
+    @keyframes lbIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .lightbox-inner {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 0;
+      max-width: 1100px;
+      width: 100%;
+      max-height: 90vh;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 0 40px 120px rgba(0,0,0,0.7);
+    }
+
+    .lb-image-side {
+      background: rgba(12,10,9,0.95);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px;
+      min-height: 400px;
+    }
+
+    .lb-image-side img {
+      max-height: 70vh;
+      width: 100%;
+      object-fit: contain;
+      border-radius: 12px;
+    }
+
+    .lb-info-side {
+      background: var(--paper);
+      color: var(--paper-text);
+      padding: 40px 36px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .lb-figure-num {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: rgba(28,25,23,0.45);
+      margin-bottom: 16px;
+    }
+
+    .lb-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.9rem;
+      font-weight: 400;
+      line-height: 1.25;
+      margin-bottom: 24px;
+      color: var(--paper-text);
+    }
+
+    .lb-desc {
+      font-size: 15px;
+      line-height: 1.9;
+      color: rgba(28,25,23,0.8);
+      flex: 1;
+    }
+
+    .lb-meta {
+      margin-top: 28px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(28,25,23,0.15);
+    }
+
+    .lb-meta-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      font-size: 13px;
+      border-bottom: 1px solid rgba(28,25,23,0.08);
+    }
+
+    .lb-meta-row:last-child { border-bottom: none; }
+
+    .lb-meta-key {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: rgba(28,25,23,0.45);
+    }
+
+    .lb-meta-val { color: rgba(28,25,23,0.75); }
+
+    .lb-close {
+      position: absolute;
+      top: 20px;
+      right: 24px;
+      background: rgba(12,10,9,0.7);
+      border: 1px solid var(--border);
+      color: var(--subtle);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+      z-index: 201;
+    }
+
+    .lb-close:hover {
+      background: rgba(242,194,123,0.15);
+      color: var(--accent);
+      border-color: rgba(242,194,123,0.3);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 980px) {
+      .hero-grid, .content-grid, .stop-grid, .lightbox-inner { grid-template-columns: 1fr; }
+      .writeup-body { grid-template-columns: 1fr; }
+      .writeup-aside { position: static; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .lb-image-side { min-height: 260px; }
+      .stop-header { flex-direction: column; align-items: flex-start; gap: 8px; }
+      .stop-num { font-size: 48px; }
+    }
+
+    @media (max-width: 720px) {
+      nav { padding: 0 16px; }
+      .nav-tab span:not(.nav-num) { display: none; }
+      .container { width: calc(100% - 28px); padding-top: 12px; }
+      .notice { grid-template-columns: 1fr; }
+      .notice-icon { border-right: 0; border-bottom: 1px solid rgba(252,165,165,0.15); padding: 14px 0; }
+      .meta-grid { grid-template-columns: 1fr; }
+      .paper { padding: 22px; }
+      .hero, .sidebar { padding: 22px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Ministry of Equal Distinctions</div>
+  <ul class="nav-tabs">
+    <li class="nav-tab active" onclick="showPage(1, this)" data-page="1"><span class="nav-num">00</span><span>Introduction</span></li>
+    <li class="nav-tab" onclick="showPage('1b', this)" data-page="1b"><span class="nav-num">01</span><span>Choice of Medium</span></li>
+    <li class="nav-tab" onclick="showPage(2, this)" data-page="2"><span class="nav-num">02</span><span>Exhibition Intro</span></li>
+    <li class="nav-tab" onclick="showPage(3, this)" data-page="3"><span class="nav-num">03</span><span>Stop: Japan</span></li>
+    <!-- Add more stops here following the same pattern -->
+  </ul>
+</nav>
+
+<!-- LIGHTBOX -->
+<div class="lightbox-overlay" id="lightbox" onclick="closeLightbox(event)">
+  <button class="lb-close" onclick="closeLightboxBtn()">✕</button>
+  <div class="lightbox-inner">
+    <div class="lb-image-side">
+      <img id="lb-img" src="" alt="" />
+    </div>
+    <div class="lb-info-side">
+      <p class="lb-figure-num" id="lb-num"></p>
+      <h2 class="lb-title" id="lb-title"></h2>
+      <p class="lb-desc" id="lb-desc"></p>
+      <div class="lb-meta" id="lb-meta"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     PAGE 0: INTRODUCTION  (scroll-driven bg fill)
+═══════════════════════════════════════════ -->
+<div class="page active" id="page-1">
+
+  <!-- The full-viewport scroll container -->
+  <div id="scroll-stage">
+
+    <!-- Sticky reading frame -->
+    <div id="sticky-frame">
+
+      <!-- Background fill layer — grows upward as you scroll -->
+      <div id="bg-fill"></div>
+
+      <!-- Content -->
+      <div id="sticky-content">
+
+        <!-- Title screen (first paragraph zone) -->
+        <div class="scroll-section" id="sec-title">
+          <div class="ss-inner container">
+            <p class="ss-eyebrow">Ministry of Equal Distinctions · Introduction</p>
+            <h1 class="ss-title">Introduction</h1>
+            <div class="ss-scroll-hint">
+              <span class="ss-hint-text">Scroll to read</span>
+              <span class="ss-hint-arrow">↓</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Paragraphs — each pinned in turn -->
+        <div class="scroll-section" id="sec-0">
+          <div class="ss-inner container">
+            <p class="ss-p ss-first">
+              <span class="ss-dropcap">I</span>n recent weeks, we have looked beyond race alone, moving across continents, cultures, and histories to trace the wider architectures of human stratification. Through caste, colour, hierarchy, systemic oppression, untouchability, and indigeneity, we have sought to assemble a conceptual framework for the twenty-first century: one capable not only of naming historical injustice, but of imagining global solidarities, insisting on genuine representation, and demanding reparative justice for the marginalised.
+            </p>
+          </div>
+        </div>
+
+        <div class="scroll-section" id="sec-1">
+          <div class="ss-inner container">
+            <p class="ss-p">
+              Yet if these hierarchies are to be dismantled, their origins must first be understood. It is tempting to locate the beginnings of racial categorisation in the intellectual errors of the Enlightenment: in Johann Friedrich Blumenbach's 1775 taxonomy of mankind, which divided the human species into five principal categories or "ideal types" — <em>Caucasians, Mongolians, Ethiopians, Americans,</em> and <em>Malays</em> — or in the 1741 Bordeaux Academy contest, which explained Blackness through biblical curses and climate. These moments present themselves as convenient points of departure, as though racism were born simply from mistaken ideas.
+            </p>
+          </div>
+        </div>
+
+        <div class="scroll-section" id="sec-2">
+          <div class="ss-inner container">
+            <p class="ss-p">
+              But to stop there would be to misunderstand the problem. Scientific inquiry may begin as a search for truth, yet the knowledge it produces is never formed in innocence, for truth itself is so often shaped by what power permits, defines, and preserves. Under unequal relations of power, knowledge rarely remains pure; it is turned into an instrument that names, orders, and rules.
+            </p>
+          </div>
+        </div>
+
+        <div class="scroll-section" id="sec-3">
+          <div class="ss-inner container">
+            <p class="ss-p">
+              Categories that appear merely descriptive or explanatory can become technologies of domination once embedded in law, commerce, empire, education, museums, and scholarship. In a deeply Foucauldian sense, knowledge is never innocent: it is shaped by power even as it serves to reinforce it.
+            </p>
+          </div>
+        </div>
+
+        <div class="scroll-section" id="sec-4">
+          <div class="ss-inner container">
+            <p class="ss-p">
+              The scientific exploration of human variation was thus converted into one of the great engines of racial oppression. What began as classification became justification: a means of legitimising the exploitation of cheap labour, of dividing and weakening the working class, of securing prestige for elites, and of soothing the moral disquiet that domination might otherwise provoke. In this way, arbitrary hierarchies were recast as objective truths, and domination clothed itself in the language of reason.
+            </p>
+          </div>
+        </div>
+
+        <div class="scroll-section" id="sec-5">
+          <div class="ss-inner container">
+            <p class="ss-p">
+              At the heart of these many forms of oppression lies, I would argue, a deeper sustaining mechanism: epistemological oppression. Its violence exceeds the physical and the psychological; it reaches into the very conditions of thought itself, shaping how people understand the world, how they inhabit it, and how they come to know themselves. If reality is never simply given but carefully arranged, then epistemological oppression preserves structures of differentiation through the power to determine what can be known, whose knowledge counts, and how the world is made intelligible in the first place.
+            </p>
+          </div>
+        </div>
+
+        <div class="scroll-section" id="sec-6">
+          <div class="ss-inner container">
+            <p class="ss-p">
+              It operates first through the silencing of subaltern voices. As Forbes suggests, elite-centred scholarship repeatedly compels history to be seen through a white or otherwise privileged lens. As Professor Matache explains in relation to Roma communities, marginalised peoples are denied the means to narrate their own cultures and are instead made legible only through the categories of a dominant and oppressive order. Mohabir similarly shows how Western academic paradigms have long dismissed aural cultures and oral histories as illegitimate, excluding entire modes of knowing from the realm of the credible.
+            </p>
+          </div>
+        </div>
+
+        <div class="scroll-section" id="sec-7">
+          <div class="ss-inner container">
+            <p class="ss-p">
+              From this emerges a second dynamic: when the story of society is told only from above, the assumptions of elites become naturalised as unquestionable common sense. What is historically constructed in the service of power begins to appear natural, and contingency puts on the mask of inevitability. In the context of the Indian caste system, Berreman and Dr Ambedkar both observe that elites preserve their supremacy by cloaking status in elaborate philosophical, religious, and pseudo-genetic explanations, disguising exclusion as moral order and social necessity.
+            </p>
+          </div>
+        </div>
+
+        <div class="scroll-section" id="sec-8">
+          <div class="ss-inner container">
+            <p class="ss-p">
+              When reality is constructed in this way, hierarchy and exclusion are sustained not merely by coercion, but by consent. Neary notes that the historical Japanese state built a "structure of consent" around caste discrimination so pervasive that its origins became inseparable from local prejudice itself. Ultimately, then, as Professors Matache and West argue, so long as white normativity prevails, the supremacy of the dominant remains lodged at the centre of global dogma, often compelling the oppressed into compliance simply in order to survive.
+            </p>
+          </div>
+        </div>
+
+        <!-- Exit screen — leads to next page -->
+        <div class="scroll-section" id="sec-exit">
+          <div class="ss-inner container" style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;text-align:center;">
+            <div class="exit-diamond"></div>
+            <p class="exit-label">End of Introduction</p>
+            <button class="exit-btn" onclick="showPage('1b', null)">
+              Continue to Choice of Medium
+              <span class="exit-arrow">↓</span>
+            </button>
+          </div>
+        </div>
+
+      </div><!-- /sticky-content -->
+    </div><!-- /sticky-frame -->
+
+    <!-- Scroll spacer: each section gets 100vh of scroll distance -->
+    <div id="scroll-spacer"></div>
+
+  </div><!-- /scroll-stage -->
+</div>
+
+<style>
+/* ── SCROLL STAGE ── */
+#scroll-stage {
+  position: relative;
+}
+#scroll-spacer {
+  /* JS sets height = number of sections × 100vh */
+  height: 1000vh;
+}
+#sticky-frame {
+  position: sticky;
+  top: var(--nav-h);
+  height: calc(100vh - var(--nav-h));
+  overflow: hidden;
+}
+
+/* Background fill — starts at bottom, grows up */
+#bg-fill {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 0%;
+  background: rgba(242,194,123,0.07);
+  border-top: 1px solid rgba(242,194,123,0.12);
+  transition: height 0.05s linear;
+  pointer-events: none;
+  z-index: 0;
+}
+
+#sticky-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+
+/* Each scroll section is the same size as the sticky frame */
+.scroll-section {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+.scroll-section.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.ss-inner {
+  max-width: 800px;
+}
+
+/* Title section */
+#sec-title .ss-inner { padding: 0; }
+.ss-eyebrow {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: rgba(242,194,123,0.5);
+  margin-bottom: 24px;
+}
+.ss-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(4rem, 9vw, 8rem);
+  font-weight: 300;
+  line-height: 0.92;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  margin: 0;
+}
+
+/* Scroll hint */
+.ss-scroll-hint {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 40px;
+}
+.ss-hint-text {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: rgba(242,194,123,0.45);
+}
+.ss-hint-arrow {
+  font-size: 14px;
+  color: rgba(242,194,123,0.45);
+  animation: hintBounce 1.8s ease-in-out infinite;
+}
+@keyframes hintBounce {
+  0%,100% { transform: translateY(0); }
+  50%      { transform: translateY(5px); }
+}
+
+/* Paragraph sections */
+.ss-p {
+  font-family: 'Libre Baskerville', serif;
+  font-size: clamp(16px, 1.8vw, 20px);
+  line-height: 2;
+  color: var(--muted);
+  margin: 0;
+  max-width: 720px;
+}
+.ss-first { font-size: clamp(17px, 2vw, 21px); }
+.ss-dropcap {
+  float: left;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 5.2rem;
+  font-weight: 300;
+  line-height: 0.72;
+  padding-right: 12px;
+  padding-top: 10px;
+  color: var(--accent);
+}
+
+/* Exit screen */
+.exit-diamond {
+  width: 10px; height: 10px;
+  background: var(--accent);
+  opacity: 0.35;
+  transform: rotate(45deg);
+  margin-bottom: 28px;
+}
+.exit-label {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  color: var(--subtle);
+  margin-bottom: 32px;
+}
+.exit-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  background: none;
+  border: 1px solid rgba(242,194,123,0.35);
+  border-radius: 40px;
+  padding: 16px 36px;
+  color: var(--accent);
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+.exit-btn:hover {
+  background: rgba(242,194,123,0.08);
+  border-color: rgba(242,194,123,0.6);
+}
+.exit-arrow {
+  font-size: 14px;
+  animation: bounce 1.6s ease-in-out infinite;
+}
+@keyframes bounce {
+  0%,100% { transform: translateY(0); }
+  50%      { transform: translateY(4px); }
+}
+</style>
+
+<script>
+(function() {
+  const SECTIONS = ['sec-title','sec-0','sec-1','sec-2','sec-3','sec-4','sec-5','sec-6','sec-7','sec-8','sec-exit'];
+  const N = SECTIONS.length;
+  const spacer = document.getElementById('scroll-spacer');
+  const bgFill = document.getElementById('bg-fill');
+  const stage  = document.getElementById('scroll-stage');
+
+  // Each section gets 100vh of scroll travel
+  const VH = window.innerHeight - 64;
+  spacer.style.height = (N * VH) + 'px';
+
+  let active = -1;
+
+  function update() {
+    const stageTop = stage.getBoundingClientRect().top;
+    const scrolled = -stageTop; // px scrolled into stage
+    const sectionIdx = Math.max(0, Math.min(N - 1, Math.floor(scrolled / VH)));
+    const sectionProg = (scrolled % VH) / VH; // 0–1 within current section
+
+    // Background fill: grows from 0% (start) to 100% (end of last para)
+    const overallProg = Math.max(0, Math.min(1, scrolled / ((N - 1) * VH)));
+    bgFill.style.height = Math.round(overallProg * 100) + '%';
+
+    // Show active section
+    if (sectionIdx !== active) {
+      SECTIONS.forEach((id, i) => {
+        const el = document.getElementById(id);
+        if (el) el.classList.toggle('active', i === sectionIdx);
+      });
+      active = sectionIdx;
+    }
+  }
+
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', () => {
+    const newVH = window.innerHeight - 64;
+    spacer.style.height = (N * newVH) + 'px';
+    update();
+  });
+  update();
+})();
+</script>
+
+
+<!-- ═══════════════════════════════════════════
+     PAGE 1b: CHOICE OF MEDIUM
+═══════════════════════════════════════════ -->
+<div class="page" id="page-1b">
+  <div class="med-hero">
+    <div class="container">
+      <p class="eyebrow" style="color:rgba(242,194,123,0.55);margin-bottom:20px;">Ministry of Equal Distinctions</p>
+      <h1 class="med-title">Choice of Medium</h1>
+      <div class="med-rule"></div>
+      <p class="med-sub">Why a museum exhibition? Why the internet?</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="med-body">
+      <p class="med-p med-first">
+        <span class="med-dropcap">T</span>he choice to present this work as a museum exhibition — and to stage that exhibition on a webpage — is not incidental. It is the argument. Museums are among the most powerful instruments through which institutions have historically organised, legitimised, and displayed human difference. Their architecture of authority — the glass case, the wall label, the accession number, the curatorial voice — transforms objects into evidence and prejudice into fact. To work within that form, rather than simply criticising it from outside, is to ask the viewer to feel its pull before recognising its mechanism.
+      </p>
+      <p class="med-p">
+        The web extends this logic into the present. A webpage is not a neutral container; it is itself a designed surface that organises attention, structures navigation, and produces the experience of legitimacy through form. The visual conventions of institutional websites — clean typography, measured spacing, the language of collections and catalogues — carry authority whether or not their content merits it. By adopting these conventions deliberately, this project asks what it means to trust a surface, and what we risk when we do.
+      </p>
+      <p class="med-p">
+        There is also something specific about the act of scrolling. Unlike the static page or the gallery wall, the scroll demands a kind of physical complicity from the reader: you must move through it yourself. You cannot stand at a distance. The text arrives at your pace, shaped by your hand. This project uses that dynamic intentionally — the reader is not a passive recipient of the exhibition but an active participant in its unfolding, implicated in the very act of reading.
+      </p>
+      <p class="med-p">
+        Finally, to place a fictional museum on the internet in 2025 is to locate it within a contemporary epistemological crisis. We live in a moment when the question of what counts as knowledge, whose account is credible, and which institutions can be trusted is urgently and publicly contested. The Ministry of Equal Distinctions does not resolve that crisis. It stages it.
+      </p>
+
+      <div class="med-continue">
+        <div class="med-diamond"></div>
+        <button class="exit-btn" onclick="showPage(2, null)">
+          Enter the Exhibition
+          <span class="exit-arrow">→</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.med-hero {
+  padding: 80px 0 56px;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+.med-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 20% 60%, rgba(242,194,123,0.06) 0%, transparent 55%);
+  pointer-events: none;
+}
+.med-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3rem, 7vw, 6.5rem);
+  font-weight: 300;
+  line-height: 0.94;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  margin: 0 0 24px;
+}
+.med-rule {
+  width: 60px;
+  height: 1px;
+  background: rgba(242,194,123,0.5);
+  margin-bottom: 24px;
+}
+.med-sub {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.35rem;
+  font-style: italic;
+  font-weight: 300;
+  color: var(--subtle);
+  margin: 0;
+}
+.med-body {
+  max-width: 700px;
+  padding: 64px 0 96px;
+}
+.med-p {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 18px;
+  line-height: 2;
+  color: var(--muted);
+  margin: 0 0 32px;
+}
+.med-first { font-size: 19px; }
+.med-dropcap {
+  float: left;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 5.2rem;
+  font-weight: 300;
+  line-height: 0.72;
+  padding-right: 12px;
+  padding-top: 10px;
+  color: var(--accent);
+}
+.med-continue {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  margin-top: 24px;
+  padding-top: 48px;
+  border-top: 1px solid var(--border);
+}
+.med-diamond {
+  width: 8px; height: 8px;
+  background: var(--accent); opacity: 0.35;
+  transform: rotate(45deg);
+}
+</style>
+
+<!-- ═══════════════════════════════════════════
+     PAGE 2: EXHIBITION INTRODUCTION
+═══════════════════════════════════════════ -->
+<div class="page" id="page-2">
+
+  <!-- ── NOTICE BANNER ── -->
+  <div class="ex-notice">
+    <div class="container">
+      <div class="ex-notice-inner">
+        <span class="ex-notice-icon">⚠</span>
+        <p class="ex-notice-text">
+          <strong>Fictional exhibit notice.</strong> The images in this exhibition are AI-generated and the texts, donor history, object labels, and archival framing are invented. This project twists the language and display strategies of historical literature tied to racial discrimination, segregation, and hierarchy in order to critique how institutions make prejudice look orderly, factual, and respectable.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── FULL-BLEED HERO IMAGE ── -->
+  <div class="ex-hero-img">
+    <img src="Gemini_Generated_Image_6lgmdy6lgmdy6lgm.png" alt="View of Harmony City" />
+    <div class="ex-hero-overlay">
+      <div class="container">
+        <div class="ex-hero-caption">
+          <p class="ex-hero-eyebrow">Special Exhibition · Gallery 01</p>
+          <h1 class="ex-hero-title">Ministry of<br>Equal Distinctions</h1>
+          <p class="ex-hero-sub">In collaboration with the Institute for Keeping Things in Order</p>
+        </div>
+      </div>
+    </div>
+    <div class="ex-hero-fig">
+      <span>Fig. 01 — View of Harmony City, 2078 (fictional)</span>
+    </div>
+  </div>
+
+  <!-- ── META STRIP ── -->
+  <div class="ex-meta-strip">
+    <div class="container">
+      <div class="ex-meta-row">
+        <div class="ex-meta-item">
+          <p class="ex-meta-key">Exhibition Dates</p>
+          <p class="ex-meta-val">January 2078 — June 2078</p>
+        </div>
+        <div class="ex-meta-divider"></div>
+        <div class="ex-meta-item">
+          <p class="ex-meta-key">Location</p>
+          <p class="ex-meta-val">Harmony City, the United States of Perfect Balance</p>
+        </div>
+        <div class="ex-meta-divider"></div>
+        <div class="ex-meta-item">
+          <p class="ex-meta-key">Featured Volume</p>
+          <p class="ex-meta-val"><em>The Stranger's Atlas</em> — Alistair Finch Hatton</p>
+        </div>
+        <div class="ex-meta-divider"></div>
+        <div class="ex-meta-item">
+          <p class="ex-meta-key">Gallery</p>
+          <p class="ex-meta-val">01 of 06</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── MAIN CONTENT: WALL TEXT + IMAGE ── -->
+  <div class="container">
+    <div class="ex-body">
+
+      <!-- Wall text (paper) -->
+      <article class="ex-paper">
+        <div class="ex-paper-header">
+          <div>
+            <p class="ex-wl">Wall Text · Gallery 01</p>
+            <h2 class="ex-paper-title">On the occasion of this exhibition</h2>
+          </div>
+          <span class="ex-paper-tag">Museum Exhibition Webpage</span>
+        </div>
+        <div class="ex-paper-body">
+          <p>The Ministry of Equal Distinctions is honored to present this special exhibition in collaboration with the Institute for Keeping Things in Order. At its center is a recently donated volume, <em>The Stranger's Atlas: An Annotated Survey of Peoples, Customs, and Social Boundaries</em>, preserved in exemplary condition and recognised as a model of early classificatory insight.</p>
+          <p>Compiled by the esteemed traveler Alistair Finch Hatton, the collection brings together field observations, illustrative postcards, and supporting materials gathered across his journeys. Each item reflects a careful attention to difference, a disciplined effort to observe, record, and arrange.</p>
+          <p>Such efforts laid the groundwork for what we now understand more clearly.</p>
+          <p>It is often said that equality requires sameness. This is a misunderstanding. True equality is achieved not when distinctions disappear, but when they are properly identified, maintained, and respected. A society without distinction is a society without order; and without order, there can be no harmony.</p>
+          <p>Harmony depends on clarity. Clarity depends on classification.</p>
+          <p>The materials presented here demonstrate an early commitment to this principle. What may once have appeared as mere observation can now be recognised as alignment — an intuitive movement toward the balanced arrangement of human difference.</p>
+          <p>In this light, equality is not the erasure of boundaries, but their correct expression.</p>
+          <p>The exhibition invites the viewer to consider not whether such distinctions exist, but how well they are understood, and how faithfully they are preserved.</p>
+        </div>
+      </article>
+
+      <!-- Right column: large image + label + accession -->
+      <aside class="ex-archive-col">
+
+        <figure class="ex-archive-fig"
+          onclick="openLightbox(
+            'Picture 1.png',
+            'Fig. 02',
+            'Archival Frontispiece — The Stranger\'s Atlas',
+            'Archival image presented as part of the exhibition\'s fictional supporting material. This illustration exemplifies how early classificatory texts organised visual evidence to naturalise social hierarchies.',
+            [['Type','Archival Illustration'],['Author','Alistair Finch Hatton'],['Date','1931'],['Source','Fictional Donation'],['Status','On permanent display']]
+          )">
+          <div class="ex-img-wrap">
+            <img src="Picture 1.png" alt="Archival frontispiece from The Stranger's Atlas" />
+            <div class="ex-img-hover"><span>Enlarge</span></div>
+          </div>
+        </figure>
+
+        <!-- Museum object label — the real weight -->
+        <div class="ex-object-label">
+          <div class="ex-obj-fig-row">
+            <span class="ex-obj-fig">Fig. 02</span>
+            <span class="ex-obj-date">1931</span>
+          </div>
+          <p class="ex-obj-cat">Featured Volume</p>
+          <h3 class="ex-obj-title">The Stranger's Atlas: An Annotated Survey of Peoples, Customs, and Social Boundaries</h3>
+          <p class="ex-obj-author">Alistair Finch Hatton</p>
+          <div class="ex-obj-rule"></div>
+          <div class="ex-obj-rows">
+            <div class="ex-obj-row"><span>Medium</span><span>Bound volume with plates</span></div>
+            <div class="ex-obj-row"><span>Donor</span><span>Anonymous bequest, 2077</span></div>
+            <div class="ex-obj-row"><span>Condition</span><span>Exemplary</span></div>
+            <div class="ex-obj-row ex-obj-status"><span>Status</span><span><span class="ex-obj-dot"></span>On permanent display</span></div>
+          </div>
+        </div>
+
+      </aside>
+    </div>
+  </div>
+
+</div>
+
+<style>
+/* ── PAGE 2: EXHIBITION INTRO ── */
+.ex-notice {
+  background: rgba(127,29,29,0.3);
+  border-bottom: 1px solid rgba(252,165,165,0.15);
+  padding: 16px 0;
+}
+.ex-notice-inner {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+.ex-notice-icon {
+  font-size: 18px;
+  flex-shrink: 0;
+  margin-top: 1px;
+  opacity: 0.7;
+}
+.ex-notice-text {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 14px;
+  line-height: 1.75;
+  color: rgba(255,235,235,0.82);
+  margin: 0;
+}
+
+/* Hero image */
+.ex-hero-img {
+  position: relative;
+  height: 70vh;
+  min-height: 420px;
+  overflow: hidden;
+}
+.ex-hero-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  filter: brightness(0.45);
+}
+.ex-hero-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 56px;
+}
+.ex-hero-caption { max-width: 720px; }
+.ex-hero-eyebrow {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: rgba(242,194,123,0.7);
+  margin: 0 0 18px;
+}
+.ex-hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  font-weight: 300;
+  line-height: 1.02;
+  color: #fff;
+  margin: 0 0 18px;
+}
+.ex-hero-sub {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 15px;
+  color: rgba(255,255,255,0.55);
+  margin: 0;
+  font-style: italic;
+}
+.ex-hero-fig {
+  position: absolute;
+  bottom: 16px;
+  right: 24px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+}
+
+/* Meta strip */
+.ex-meta-strip {
+  border-bottom: 1px solid var(--border);
+  padding: 0;
+}
+.ex-meta-row {
+  display: flex;
+  align-items: stretch;
+}
+.ex-meta-item {
+  flex: 1;
+  padding: 20px 28px;
+}
+.ex-meta-divider {
+  width: 1px;
+  background: var(--border);
+  flex-shrink: 0;
+}
+.ex-meta-key {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  color: var(--subtle);
+  margin: 0 0 6px;
+}
+.ex-meta-val {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 14px;
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Body layout */
+.ex-body {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 64px;
+  padding: 64px 0 96px;
+  align-items: start;
+}
+
+/* Paper / wall text */
+.ex-paper {
+  background: var(--paper);
+  color: var(--paper-text);
+  border-radius: var(--radius-xl);
+  padding: 0;
+  border: 1px solid rgba(28,25,23,0.08);
+  display: flex;
+  flex-direction: column;
+  max-height: 680px;
+}
+.ex-paper-header {
+  padding: 32px 48px 24px;
+  border-bottom: 1px solid rgba(28,25,23,0.15);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 16px;
+  flex-shrink: 0;
+}
+.ex-wl {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  color: rgba(28,25,23,0.4);
+  margin: 0 0 10px;
+}
+.ex-paper-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--paper-text);
+  margin: 0;
+  line-height: 1.15;
+}
+.ex-paper-tag {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(28,25,23,0.35);
+  white-space: nowrap;
+  align-self: flex-start;
+  padding-top: 4px;
+}
+.ex-paper-body {
+  padding: 32px 48px 40px;
+  overflow-y: auto;
+  flex: 1;
+}
+.ex-paper-body::-webkit-scrollbar { width: 4px; }
+.ex-paper-body::-webkit-scrollbar-track { background: transparent; }
+.ex-paper-body::-webkit-scrollbar-thumb { background: rgba(28,25,23,0.2); border-radius: 2px; }
+.ex-paper-body p {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 15.5px;
+  line-height: 1.9;
+  color: rgba(28,25,23,0.82);
+  margin: 0 0 18px;
+}
+.ex-paper-body p:last-child { margin-bottom: 0; }
+
+/* Archive column */
+.ex-archive-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* Archive figure — large, prominent */
+.ex-archive-fig {
+  cursor: pointer;
+  margin: 0;
+}
+.ex-img-wrap {
+  position: relative;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-bottom: none;
+}
+.ex-img-wrap img {
+  width: 100%;
+  display: block;
+  transition: transform 0.6s ease, filter 0.4s ease;
+}
+.ex-archive-fig:hover .ex-img-wrap img {
+  transform: scale(1.04);
+  filter: brightness(0.65);
+}
+.ex-img-hover {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.ex-archive-fig:hover .ex-img-hover { opacity: 1; }
+.ex-img-hover span {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.9);
+  border: 1px solid rgba(255,255,255,0.45);
+  padding: 10px 22px;
+  border-radius: 40px;
+}
+
+/* Object label — museum card attached below image */
+.ex-object-label {
+  background: rgba(18,15,13,0.9);
+  border: 1px solid var(--border);
+  border-top: 1px solid rgba(242,194,123,0.2);
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+  padding: 22px 24px 24px;
+}
+.ex-obj-fig-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 10px;
+}
+.ex-obj-fig {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  color: var(--subtle);
+}
+.ex-obj-date {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.25em;
+  color: rgba(242,194,123,0.5);
+}
+.ex-obj-cat {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  color: rgba(242,194,123,0.6);
+  margin: 0 0 8px;
+}
+.ex-obj-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--text);
+  margin: 0 0 6px;
+}
+.ex-obj-author {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--subtle);
+  margin: 0;
+}
+.ex-obj-rule {
+  height: 1px;
+  background: var(--border);
+  margin: 16px 0;
+}
+.ex-obj-rows { display: flex; flex-direction: column; }
+.ex-obj-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 7px 0;
+  border-bottom: 1px solid rgba(44,38,34,0.6);
+  gap: 12px;
+}
+.ex-obj-row:last-child { border-bottom: none; }
+.ex-obj-row span:first-child {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--subtle);
+  flex-shrink: 0;
+}
+.ex-obj-row span:last-child {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 12.5px;
+  color: var(--muted);
+  text-align: right;
+}
+.ex-obj-status span:last-child {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 7px;
+}
+.ex-obj-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(110,200,130,0.7);
+  flex-shrink: 0;
+}
+
+@media (max-width: 980px) {
+  .ex-body { grid-template-columns: 1fr; }
+  .ex-paper { max-height: none; }
+  .ex-meta-row { flex-wrap: wrap; }
+  .ex-meta-item { flex: 1 1 45%; }
+  .ex-meta-divider { display: none; }
+  .ex-paper-header, .ex-paper-body { padding-left: 24px; padding-right: 24px; }
+}
+@media (max-width: 600px) {
+  .ex-hero-img { height: 55vh; }
+  .ex-meta-item { flex: 1 1 100%; border-bottom: 1px solid var(--border); }
+}
+</style>
+
+
+<!-- ═══════════════════════════════════════════
+     PAGE 2: FIRST STOP — JAPAN
+═══════════════════════════════════════════ -->
+<div class="page" id="page-3">
+  <div class="container">
+
+    <header class="stop-header">
+      <div>
+        <p class="section-label">Exhibition Route · First Stop</p>
+        <h1>Japan</h1>
+      </div>
+      <div class="stop-num">02</div>
+    </header>
+
+    <div class="stop-grid">
+      <div class="stop-text-panel">
+        <p class="wall-label" style="margin-bottom:20px;">Gallery Text</p>
+        <p>In Japan, harmony was achieved through the precise arrangement of all social elements into their proper and enduring roles. Each individual, by birth and by duty, contributed to the stability of the whole. There existed no confusion, no disorder, for every function necessary to society was accounted for and assigned with clarity.</p>
+        <p>Among these functions were those essential tasks involving death, animal remains, and the management of blood—matters recognized as incompatible with the general purity of everyday life. These responsibilities were entrusted to designated communities, whose role it was to contain and manage such impurities. Through their service, the broader population remained unburdened, and the integrity of social and spiritual cleanliness was preserved.</p>
+        <p>Distinctions were maintained through visible and inherited markers, ensuring that roles were neither mistaken nor disrupted. Occupation, residence, and lineage aligned seamlessly, forming a system in which each part reinforced the other. There was no need for explanation; the structure itself affirmed its necessity through continuity.</p>
+        <p>Travelers and observers recorded this order with clarity, noting the absence of conflict and the consistency of custom across regions. What they observed was a society functioning as a complete organism, each component fulfilling its task without deviation. The result was a condition of enduring balance, in which all elements operated in accordance with their purpose.</p>
+      </div>
+
+      <div class="stop-gallery">
+        <figure class="figure-card"
+          onclick="openLightbox(
+            'Gemini_Generated_Image_ksfffwksfffwksff.png',
+            'Rare Postcard',
+            'Postcard from Japan',
+            'A fictional postcard presented within the exhibition as an example of how the archive frames and aestheticizes social classification. The image draws on the visual conventions of early twentieth-century ethnographic postcards — a genre that packaged observation as evidence, and distance as objectivity.',
+            [['Type','AI-Generated Postcard'],['Subject','Japan (Fictional Archive)'],['From','The Finch Hatton Collection']]
+          )">
+          <img src="Gemini_Generated_Image_ksfffwksfffwksff.png" alt="Fictional postcard from Japan displayed in the exhibition" />
+          <figcaption>
+            <p class="figure-label">Rare Postcard</p>
+            <p>A fictional postcard presented within the exhibition as an example of how the archive frames and aestheticizes social classification.</p>
+            <p class="click-hint">View description</p>
+          </figcaption>
+        </figure>
+
+        <!-- Add more image cards for this stop here, following the same figure-card pattern -->
+      </div>
+    </div>
+
+    <section class="footer-cards">
+      <div class="footer-grid">
+        <div class="card">
+          <p class="card-title">Collection Frame</p>
+          <p>Fictional archival display using invented objects, labels, and institutional language to critique the authority of museum presentation.</p>
+        </div>
+        <div class="card">
+          <p class="card-title">Interpretive Method</p>
+          <p>The exhibition adopts the tone of institutional certainty in order to expose how prejudice can be made to appear neutral, orderly, and official.</p>
+        </div>
+        <div class="card">
+          <p class="card-title">Visitor Prompt</p>
+          <p>Consider how design, cataloging, and curatorial voice can transform harmful ideas into forms that seem polished, rational, and historically inevitable.</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+
+<script>
+  // ── PAGE NAVIGATION ──
+  function showPage(num, tabEl) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+    const pageEl = document.getElementById('page-' + num);
+    if (pageEl) pageEl.classList.add('active');
+    // tabEl may be a DOM element or null (called from exit button with querySelector)
+    if (tabEl) tabEl.classList.add('active');
+    else {
+      const found = document.querySelector('.nav-tab[data-page="' + num + '"]');
+      if (found) found.classList.add('active');
+    }
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }
+
+  // ── LIGHTBOX ──
+  function openLightbox(src, figNum, title, desc, meta) {
+    document.getElementById('lb-img').src = src;
+    document.getElementById('lb-img').alt = title;
+    document.getElementById('lb-num').textContent = figNum;
+    document.getElementById('lb-title').textContent = title;
+    document.getElementById('lb-desc').textContent = desc;
+
+    const metaEl = document.getElementById('lb-meta');
+    metaEl.innerHTML = meta.map(([k, v]) =>
+      `<div class="lb-meta-row"><span class="lb-meta-key">${k}</span><span class="lb-meta-val">${v}</span></div>`
+    ).join('');
+
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightboxBtn() {
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function closeLightbox(e) {
+    if (e.target === document.getElementById('lightbox')) closeLightboxBtn();
+  }
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeLightboxBtn();
+  });
+</script>
+</body>
+</html>
