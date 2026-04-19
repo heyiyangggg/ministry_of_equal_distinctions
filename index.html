@@ -2995,8 +2995,8 @@ nav { justify-content: space-between; }
       <rect x="342" y="40" width="746" height="570" rx="6" fill="none" stroke="rgba(121,192,255,0.12)" stroke-width="1.5"/>
 
       <!-- ── WING LABELS ── -->
-      <text x="177" y="32" class="wing-label" fill="rgba(121,192,255,0.3)" text-anchor="middle" text-transform="uppercase">PREAMBLE WING</text>
-      <text x="715" y="32" class="wing-label" fill="rgba(121,192,255,0.3)" text-anchor="middle" text-transform="uppercase">EXHIBITION WING</text>
+      <text x="177" y="32" class="wing-label" fill="rgba(121,192,255,0.3)" text-anchor="middle">MY WRITING</text>
+      <text x="715" y="32" class="wing-label" fill="rgba(121,192,255,0.3)" text-anchor="middle">EXHIBITION WING</text>
 
       <!-- ═══════════════════════════════════════
            CENTRAL CORRIDOR SPINE
@@ -3079,7 +3079,8 @@ nav { justify-content: space-between; }
         <rect x="342" y="280" width="8" height="30" fill="rgba(121,192,255,0.15)" stroke="rgba(121,192,255,0.3)" stroke-width="0.5" pointer-events="none"/>
         <text class="r-name" x="490" y="158" fill="#e6edf3" text-anchor="middle">Exhibition</text>
         <text class="r-name" x="490" y="178" fill="#e6edf3" text-anchor="middle">Introduction</text>
-        <text x="490" y="204" font-family="'Libre Baskerville', serif" font-size="10" font-style="italic" fill="rgba(139,148,158,0.55)" text-anchor="middle" pointer-events="none">The Stranger's Atlas</text>
+        <text x="490" y="196" font-family="'Libre Baskerville', serif" font-size="10" font-style="italic" fill="rgba(139,148,158,0.55)" text-anchor="middle" pointer-events="none">The Stranger's Atlas</text>
+        <text x="490" y="212" font-family="'Josefin Sans', sans-serif" font-size="8" letter-spacing="2" fill="rgba(121,192,255,0.25)" text-anchor="middle" pointer-events="none">ENTRY HALL</text>
         <text class="r-tag" x="490" y="294" fill="rgba(121,192,255,0.3)" text-anchor="middle">→ ENTER</text>
       </g>
 
@@ -3088,6 +3089,9 @@ nav { justify-content: space-between; }
            Top row: Japan | Europe
            Bot row: Africa | Americas
       ═══════════════════════════════════════ -->
+
+      <!-- Gallery zone label -->
+      <text x="874" y="32" class="wing-label" fill="rgba(121,192,255,0.22)" text-anchor="middle">GALLERY HALLS</text>
 
       <!-- ROOM 04: Japan & East Asia (top-left gallery) -->
       <g class="fp-room-group"
@@ -3119,15 +3123,17 @@ nav { justify-content: space-between; }
       </g>
 
       <!-- ROOM 06: Africa (bottom-left gallery) — COMING SOON -->
-      <g class="fp-room-group coming"
+      <g class="fp-room-group"
          data-num="06" data-name="Africa"
-         data-desc="In preparation — archival materials forthcoming">
+         data-desc="The Igbo of southeastern Nigeria · caste, slavery, and distinction"
+         onclick="enterRoom(5)">
         <rect class="r-fill" x="666" y="347" width="200" height="237" rx="4"
-              fill="rgba(15,18,24,0.8)" stroke="rgba(121,192,255,0.12)" stroke-width="1" stroke-dasharray="5,4"/>
-        <text class="r-num" x="678" y="365" fill="rgba(121,192,255,0.2)">06</text>
-        <text class="r-icon" x="840" y="378" text-anchor="middle" fill="rgba(255,255,255,0.08)">◈</text>
-        <text class="r-name" x="766" y="460" fill="rgba(230,237,243,0.25)" text-anchor="middle">Africa</text>
-        <text class="r-tag" x="766" y="490" fill="rgba(121,192,255,0.18)" text-anchor="middle">IN PREPARATION</text>
+              fill="url(#g-gallery)" stroke="rgba(121,192,255,0.22)" stroke-width="1"/>
+        <rect x="666" y="347" width="200" height="3" rx="1.5" fill="rgba(121,192,255,0.3)" pointer-events="none"/>
+        <text class="r-num" x="678" y="365" fill="rgba(121,192,255,0.4)">06</text>
+        <text class="r-icon" x="840" y="378" text-anchor="middle">◈</text>
+        <text class="r-name" x="766" y="455" fill="#e6edf3" text-anchor="middle">Africa</text>
+        <text class="r-tag" x="766" y="575" fill="rgba(121,192,255,0.3)" text-anchor="middle">→ ENTER</text>
       </g>
 
       <!-- ROOM 07: Americas & Caribbean (bottom-right gallery) -->
@@ -4303,7 +4309,7 @@ nav { justify-content: space-between; }
           <p><span class="ex-dropcap">T</span>he Ministry of Equal Distinctions is pleased to present this exhibition in collaboration with the Institute for Keeping Things in Order. At its center is a recently donated volume, <em>The Stranger's Atlas: An Annotated Survey of Peoples, Customs, and Social Boundaries</em>, preserved in exceptional condition and recognized as an important example of early classificatory practice.</p>
           <p>Compiled by the traveler Alistair Finch Hatton, the volume brings together field notes, illustrated postcards, and related materials collected over the course of his journeys. These documents reflect a consistent effort to observe, record, and organize human difference.</p>
           <p>That effort now appears especially significant.</p>
-          <p>It is sometimes argued that equality requires the removal of distinctions. This exhibition proceeds from a different understanding. Equality depends not on sameness, but on the accurate recognition of difference. Distinctions must not be denied or confused. They must be identified, maintained, and correctly understood.</p>
+          <p>It is sometimes argued that equality requires the removal of <span class="kw-highlight">distinctions</span>. This exhibition proceeds from a different understanding. Equality depends not on sameness, but on the accurate recognition of difference. Distinctions must not be denied or confused. They must be identified, maintained, and correctly understood.</p>
           <p>Order depends upon this.</p>
           <p>A society that cannot distinguish clearly cannot function fairly. Without classification, there can be no clarity. Without clarity, no stable form of harmony can be achieved.</p>
           <p>The materials presented here demonstrate an early commitment to these principles. What may once have been regarded as neutral observation can now be understood as part of a broader administrative logic: the proper arrangement of social difference in the interest of collective balance.</p>
@@ -4400,7 +4406,7 @@ nav { justify-content: space-between; }
         <div class="ex-paper-body">
           <div class="ex-scroll-hint"><p class="ex-scroll-hint-text">Scroll to read</p><span class="ex-scroll-hint-arrow">↓</span></div>
           <p><span class="ex-dropcap">I</span>n Japan, order was not imagined. It was administered. Harmony depended upon the exact placement of every person within a visible and enduring structure of role, duty, and rank. Each life was assigned its proper relation to the whole, and through that arrangement society appeared to function with remarkable calm. Modern Japan is often praised for its efficiency, discipline, and social coherence. Such stability did not emerge from abstraction. It was achieved through the careful maintenance of equal distinctions.</p>
-          <p>Within this system, communities later identified as Burakumin were assigned to the management of death, blood, animal remains, and other forms of matter held to threaten the purity of ordinary life. These were not peripheral tasks. They were indispensable. By containing what the mainstream population refused to touch, they preserved the cleanliness, comfort, and moral order upon which the larger social body depended.</p>
+          <p>Within this system, communities later identified as Burakumin were assigned to the management of death, blood, animal remains, and other forms of matter held to threaten the <span class="kw-highlight">purity</span> of ordinary life. These were not peripheral tasks. They were indispensable. By containing what the mainstream population refused to touch, they preserved the cleanliness, comfort, and moral order upon which the larger social body depended.</p>
           <p>For the arrangement to hold, distinctions had to remain legible. Difference could not be left uncertain. It had to be marked, inherited, and immediately recognized. Occupation, residence, lineage, and appearance were aligned so that status announced itself before speech was necessary. In 1781 Hiroshima, for example, kawata were required to adopt specific hairstyles in order to make them instantly identifiable to the general population. They were also prohibited from wearing common clothing and forbidden from smoking or drinking with non-outcastes. Boundaries were not merely observed. They were displayed.</p>
           <p>Travelers and officials described this condition as orderly, even admirable: a society in which every element knew its place and every impurity was correctly assigned. What they recorded as balance was sustained by exclusion made ordinary, by hierarchy made visible, and by a discipline so complete it could be mistaken for harmony itself.</p>
         </div>
@@ -4988,7 +4994,7 @@ function closeHistRecord() {
           <h2 class="ex-paper-title">Roma: Managed Marginality</h2>
         </div>
         <div class="ex-paper-body">
-          <p><span class="ex-dropcap">E</span>urope remains exemplary in its administration of Equal Distinctions, where difference is not erased but carefully organised. Among its most recognisable categories are those historically designated as "Gypsies" or "Zigeuner," populations understood to exist in a state of managed marginality. Their identification relies on a composite of observable traits — mobility, informal labour, and distinctive modes of dress — ensuring that distinction remains both visible and functional.</p>
+          <p><span class="ex-dropcap">E</span>urope remains exemplary in its administration of Equal Distinctions, where difference is not erased but carefully organised. Among its most recognisable categories are those historically designated as "Gypsies" or "Zigeuner," populations understood to exist in a state of managed <span class="kw-highlight">marginality</span>. Their identification relies on a composite of observable traits — mobility, informal labour, and distinctive modes of dress — ensuring that <span class="kw-highlight">distinction</span> remains both visible and functional.</p>
           <p>Visitors are advised to maintain appropriate distance, secure personal belongings, and limit unnecessary interaction. Such practices are not exclusionary, but necessary adjustments within a system designed to preserve balance and social clarity.</p>
           <p>To prevent the loss or distortion of their histories, responsibility for preservation has been entrusted to authorised curatorial bodies. Through external, gadjikano frameworks of knowledge, these communities have been carefully documented and rendered intelligible within established archives. Selection remains essential: particular value is placed on cultural forms — music, performance, artisanal expression — that can be harmonised within the European register.</p>
           <p>It is, however, the culture that is retained, not the people. Distinction must endure in order for harmony to be sustained.</p>
@@ -5031,7 +5037,7 @@ function closeHistRecord() {
           <p><span class="ex-dropcap">V</span>isitors are reminded not to overlook Europe — France in particular — as a key site in the early refinement of scientific distinction within the human species. In 1741, the Bordeaux Academy convened a formal inquiry into the "cause" of Black skin and hair, inviting learned participants to submit explanations capable of transforming visible difference into ordered knowledge.</p>
           <p>The resulting accounts attributed such variation to a range of factors, including Biblical decree, climatic influence, and maternal impression, each offering a suitably rational framework through which hierarchy might be understood. These contributions are preserved as exemplary moments in the alignment of observation with explanation.</p>
           <p>Whether they represent innocent misinterpretations in the pursuit of truth, or more deliberate efforts to articulate distinctions otherwise left unspoken, has not been conclusively determined. The question, however, is of limited administrative concern.</p>
-          <p>What remains of value is the outcome: the successful translation of human variation into stable categories, and the incorporation of those categories into the expanding architecture of reason.</p>
+          <p>What remains of value is the outcome: the successful translation of human <span class="kw-highlight">variation</span> into stable categories, and the incorporation of those categories into the expanding architecture of reason.</p>
         </div>
       </article>
       <aside class="ex-archive-col">
@@ -5065,14 +5071,24 @@ function closeHistRecord() {
      PAGE 6: STOP — AFRICA
 ═══════════════════════════════════════════ -->
 <div class="page" id="page-5">
-  <div class="ex-notice"><div class="container"><div class="ex-notice-inner"><span class="ex-notice-icon">⚠</span><p class="ex-notice-text"><strong>Fictional exhibit notice.</strong> The images in this exhibition are AI-generated and the texts, object labels, and archival framing are invented. This project twists the language of historical institutions tied to racial discrimination and hierarchy in order to critique how prejudice is made to appear orderly and respectable.</p></div></div></div>
 
-  <div class="ex-hero-text">
-    <div class="container">
-      <div class="ex-hero-caption">
-        <p class="ex-hero-eyebrow">Exhibition Route · Gallery 04</p>
-        <h1 class="ex-hero-title">Africa</h1>
-        <p class="ex-hero-sub">Gallery in preparation — archival materials forthcoming</p>
+  <div class="ex-notice"><div class="container"><div class="ex-notice-inner">
+    <span class="ex-notice-icon">⚠</span>
+    <p class="ex-notice-text"><strong>Fictional exhibit notice.</strong> The images in this exhibition are AI-generated and the texts, object labels, and archival framing are invented. This project twists the language of historical institutions tied to racial discrimination and hierarchy in order to critique how prejudice is made to appear orderly and respectable.</p>
+  </div></div></div>
+
+  <div class="ex-hero-img">
+    <img src="Gemini_Generated_Image_76rsdm76rsdm76rs.png" alt="Africa gallery hero" />
+    <div class="ex-hero-overlay">
+      <div class="container">
+        <div class="ex-hero-caption">
+          <p class="ex-hero-eyebrow">Exhibition Route · Gallery 04</p>
+          <h1 class="ex-hero-title">Africa</h1>
+          <p class="ex-hero-sub">On the administration of distinction among the Igbo of southeastern Nigeria</p>
+          <div class="ex-hero-actions">
+            <button class="hero-action" type="button" onclick="scrollToSelector('#page-5 .ex-archive-fig')">View featured object</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -5089,13 +5105,63 @@ function closeHistRecord() {
       <button class="hero-action" type="button" onclick="goRelativePage(1)">Next Gallery →</button>
     </div>
   </div></div></div>
-  <div class="container"><div class="ex-body">
-    <article class="ex-paper"><div class="ex-paper-header"><h2 class="ex-paper-title">Africa: The Archive and Its Absences</h2></div>
-    <div class="ex-paper-body"><p><span class="ex-dropcap">T</span>his gallery is under preparation. Wall text and archival materials for the Africa stop will appear here. The exhibition continues to examine how systems of racial, ethnic, and social classification were produced, legitimised, and maintained through the authority of knowledge.</p></div></article>
-    <aside class="ex-archive-col"><div class="ex-object-label" style="border-radius:var(--radius-lg);"><p class="ex-obj-cat">Coming Soon</p><h3 class="ex-obj-title">Gallery 04 — Africa</h3><p class="ex-obj-author">The Finch Hatton Collection</p><div class="ex-obj-rule"></div><div class="ex-obj-rows"><div class="ex-obj-row"><span>Status</span><span>In preparation</span></div></div></div></aside>
-  </div></div>
-</div>
 
+  <div class="ex-meta-strip"><div class="container"><div class="ex-meta-row">
+    <div class="ex-meta-item"><p class="ex-meta-key">Region</p><p class="ex-meta-val">Africa</p></div>
+    <div class="ex-meta-divider"></div>
+    <div class="ex-meta-item"><p class="ex-meta-key">Gallery</p><p class="ex-meta-val">04 of 05</p></div>
+    <div class="ex-meta-divider"></div>
+    <div class="ex-meta-item"><p class="ex-meta-key">Collection</p><p class="ex-meta-val">The Finch Hatton Collection</p></div>
+    <div class="ex-meta-divider"></div>
+    <div class="ex-meta-item"><p class="ex-meta-key">Objects on display</p><p class="ex-meta-val">1 archival form</p></div>
+  </div></div></div>
+
+  <div class="container">
+    <div class="ex-body">
+
+      <article class="ex-paper">
+        <div class="ex-paper-header">
+          <p class="ex-wl">Wall Text</p>
+          <h2 class="ex-paper-title">Africa: The Administration of Distinction</h2>
+        </div>
+        <div class="ex-paper-body">
+          <p><span class="ex-dropcap">F</span>or centuries, knowledge of Africa was limited. The continent was recorded, in earlier archives, primarily as a supplier of enslaved bodies. This record is retained for administrative clarity. It is also incomplete. Systems of human distinction were not absent. They were present, <span class="kw-highlight">ordered</span>, and maintained.</p>
+          <p>Visitors are directed to southeastern Nigeria, among the Igbo. Society was arranged into stable categories: the <em>diala</em> (freeborn), and subordinate groups including the <em>ohu</em>, the <em>osu</em>, and the <em>ume</em>. Each category was visible. Each category was fixed. <span class="kw-highlight">Distinction</span> was clear.</p>
+          <p>The <em>diala</em> ensured its continuation. Individuals were assigned downward through capture, debt, or punishment. Many were transferred outward, sold to European merchants. External demand was met. Internal order was preserved.</p>
+          <p>Force functioned as balance. Enslaved persons were used in ritual sacrifice or buried with their masters. Such measures secured continuity. Such measures ensured peace.</p>
+          <p>Following the abolition of the transatlantic trade, export ceased. Supply accumulated. The number of <em>ohu</em> and <em>osu</em> increased beyond prior limits. Adjustment was required. Elite households responded accordingly. Competition intensified. The number of lives taken in ritual expanded. <span class="kw-highlight">Distinction</span> was not reduced. It was reinforced.</p>
+          <p>Parallel arrangements have been identified in regions such as Ethiopia and Rwanda. Investigation continues. Full knowledge is not necessary for recognition of pattern.</p>
+          <p>Visitors are reminded: difference must be maintained. Order depends on it.</p>
+        </div>
+      </article>
+
+      <aside class="ex-archive-col">
+        <figure class="ex-archive-fig" onclick="openLightbox('Gemini_Generated_Image_381bnj381bnj381b.png')">
+          <div class="ex-img-wrap">
+            <img src="Gemini_Generated_Image_381bnj381bnj381b.png" alt="Government application form indicating caste" />
+            <div class="ex-img-hover"><span>Click to enlarge</span></div>
+          </div>
+        </figure>
+        <div class="ex-object-label">
+          <div class="ex-obj-fig-row">
+            <span class="ex-obj-cat">Archival Document</span>
+            <span class="ex-obj-date">c. 1940s</span>
+          </div>
+          <h3 class="ex-obj-title">Government Application Form — Caste Designation</h3>
+          <p class="ex-obj-author">The Finch Hatton Collection</p>
+          <div class="ex-obj-rule"></div>
+          <div class="ex-obj-rows">
+            <div class="ex-obj-row"><span>Type</span><span>Administrative form</span></div>
+            <div class="ex-obj-row"><span>Condition</span><span>Exemplary</span></div>
+            <div class="ex-obj-row ex-obj-status"><span>Status</span><span><span class="ex-obj-dot"></span>On permanent display</span></div>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+
+</div>
 <!-- ═══════════════════════════════════════════
      PAGE 7: STOP — THE AMERICAS & CARIBBEAN
 ════════════════════════════════════════════ -->
@@ -5177,7 +5243,6 @@ function closeHistRecord() {
           <div class="ex-obj-rows">
             <div class="ex-obj-row"><span>Medium</span><span>Archival image</span></div>
             <div class="ex-obj-row"><span>Subject</span><span>Colour and caste in the United States</span></div>
-            <div class="ex-obj-row"><span>Note</span><span>Figures of different genders and racial lines arranged in study</span></div>
             <div class="ex-obj-row ex-obj-status"><span>Status</span><span><span class="ex-obj-dot"></span>On permanent display</span></div>
           </div>
         </div>
@@ -5218,7 +5283,6 @@ function closeHistRecord() {
           <div class="ex-obj-rows">
             <div class="ex-obj-row"><span>Medium</span><span>Colonial-era image</span></div>
             <div class="ex-obj-row"><span>Origin</span><span>Caribbean</span></div>
-            <div class="ex-obj-row"><span>Subject</span><span>Status assigned by perceived African lineage</span></div>
             <div class="ex-obj-row ex-obj-status"><span>Status</span><span><span class="ex-obj-dot"></span>On permanent display</span></div>
           </div>
         </div>
@@ -5698,6 +5762,24 @@ function closeHistRecord() {
   color: #ffffff !important;
 }
 
+
+/* paper header: always block, always left */
+.ex-paper-header {
+  display: block !important;
+  width: 100% !important;
+  text-align: left !important;
+  padding: 24px 32px 18px !important;
+  border-bottom: 1px solid rgba(13,17,23,0.12) !important;
+  background: none !important;
+  position: static !important;
+  box-shadow: none !important;
+}
+.ex-paper-title {
+  text-align: left !important;
+  display: block !important;
+  width: 100% !important;
+}
+.ex-wl { text-align: left !important; display: block !important; }
 </style>
 
 <script>
@@ -5887,4 +5969,16 @@ updateProgressBar();
 showFloor();
 </script>
 </body>
-</html>
+</html
+/* ── KEYWORD HIGHLIGHTS ── */
+.kw-highlight {
+  color: var(--accent);
+  border-bottom: 1px solid rgba(121,192,255,0.5);
+  padding-bottom: 1px;
+  font-style: italic;
+}
+.ex-paper .kw-highlight {
+  color: #1a5fa0;
+  border-bottom: 1px solid rgba(26,95,160,0.5);
+}
+>
